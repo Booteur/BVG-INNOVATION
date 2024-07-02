@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export",
+    "commit" : "npx git-cz",
+    "pull" : "git pull origin master"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",

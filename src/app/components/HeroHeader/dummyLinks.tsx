@@ -13,4 +13,7 @@ export const Links: ILinks[] = [
   {
     title: "A propos",
   },
+  {
+    title: "A propos",
+  },
 ];

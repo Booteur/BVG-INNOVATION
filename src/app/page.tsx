@@ -1,21 +1,20 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import HeroHeader from "./components/HeroHeader/HeroHeader";
 import HowItWork from "./components/HowItWork/HowItWork";
+import ServicesSection from "./components/OurServices/OurServices";
 
 export default function Home() {
   return (
-    <Flex bgColor={"white"}>
+    <Box bgColor={"white"}>
       <Box>
         <HeroHeader />
       </Box>
-      {/* <Box
-        mt={"100px"}
-        mb={"500px"}
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
+      <Box mb={"10px"} alignItems={"center"} justifyContent={"center"}>
         <HowItWork />
-      </Box>*/}
-    </Flex>
+      </Box>
+      {/*<Box mb={"500px"} alignItems={"center"} justifyContent={"center"}>
+        <ServicesSection />
+      </Box> */}
+    </Box>
   );
 }

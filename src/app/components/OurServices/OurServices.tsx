@@ -1,93 +1,111 @@
 "use client";
 
 import React from "react";
-import {
-  Box,
-  Flex,
-  Text,
-  Heading,
-  VStack,
-  SimpleGrid,
-  Button,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, SimpleGrid } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { WorlMobile } from "../../../../public/assets/svg";
 import ServiceCard from "./ServiceData";
-
-// Définir des composants Motion pour les animations
-const MotionBox = motion(Box);
-const MotionButton = motion(Button);
-
-const services = [
-  {
-    icon: <WorlMobile width={20} height={20} />,
-    title: "Developpement d'applications",
-    description:
-      "Où que vous soyez, 24h/24 et 7j/7, consultez facilement votre portefeuille immobilier en ligne",
-  },
-  {
-    icon: <WorlMobile width={20} height={20} />,
-    title: "Design",
-    description:
-      "Organisez facilement les informations sur vos propriétés sous gestion, vos locataires et propriétaires",
-  },
-  {
-    icon: <WorlMobile width={20} height={20} />,
-    title: "Infographie",
-    description:
-      "Automatisez vos quittances mensuelles en quelques clics ainsi que la confirmation et l’envoi des quittances post-paiement.",
-  },
-  {
-    icon: <WorlMobile width={20} height={20} />,
-    title: "Refonte site & applications",
-    description: "Facilitez le paiement des loyers via mobile money.",
-  },
-  {
-    icon: <WorlMobile width={20} height={20} />,
-    title: "Consulting IT",
-    description:
-      "Publiez vos annonces directement sur les plateformes spécialisées.",
-  },
-];
+import { services } from "./dummyServices";
 
 const ServicesSection = () => {
-  return (
-    <Box>
-      <VStack spacing={4} textAlign="center" mb={12}>
-        <MotionButton
-          color={"primary.500"}
-          bgColor={"#EFECFF"}
-          size={"lg"}
-          borderRadius={"39px"}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          Services
-        </MotionButton>
-        <Heading maxW={{ base: "90%", md: "500px" }}>
-          Des services mis à votre disposition pour booster votre productivité
-        </Heading>
-        <Text fontSize="lg" color="gray.500" maxW="3xl">
-          Découvrez comment nous pouvons vous aider à redéfinir votre efficacité
-        </Text>
-      </VStack>
+  const MotionText = motion(Text);
 
-      <Flex
-        flexDirection={{ base: "column", md: "row" }}
-        align={"center"}
-        justify="center"
-      >
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={8}>
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
-        </SimpleGrid>
-      </Flex>
+  const boxVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        delay: 0.2,
+      },
+    },
+  };
+
+  return (
+    <Box p={4}>
+      <Box p={3}>
+        <Flex
+          alignItems={"center"}
+          justifyContent={"center"}
+          direction={"column"}
+          p={3}
+        >
+          <Flex
+            color={"primary.500"}
+            bgColor={"#EFECFF"}
+            w={"170px"}
+            h={"60px"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            borderRadius={"20px"}
+          >
+            <Text fontSize={"xl"}>Nos Services</Text>
+          </Flex>
+          <Flex
+            mt={"20px"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            maxW={{ base: "100%", sm: "65%", lg: "35%", md: "100%" }}
+            flexDirection={"column"}
+            p={3}
+          >
+            <Box mb={"10px"}>
+              <MotionText
+                fontWeight={"bold"}
+                fontSize={{ base: "md", sm: "2xl", lg: "3xl", md: "4xl" }}
+                textAlign={"center"}
+                color={"black"}
+                variants={boxVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                Des services mis à votre disposition pour booster votre
+                productivité
+              </MotionText>
+            </Box>
+            <Box
+              width={{ base: "100%", sm: "200", lg: "280", md: "320px" }}
+              alignContent={"center"}
+              justifyContent={"center"}
+            >
+              <MotionText
+                fontWeight={"bold"}
+                fontSize={{ base: "md", sm: "xl", lg: "2xl", md: "3xl" }}
+                textAlign={"center"}
+                color={"black"}
+                variants={boxVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                Découvrez comment nous pouvons vous aider à redéfinir votre
+                l’efficacité
+              </MotionText>
+            </Box>
+          </Flex>
+        </Flex>
+      </Box>
+      <Box p={3} width={"100%"}>
+        <Flex
+          p={3}
+          alignItems={"center"}
+          justifyContent={"center"}
+          flexDirection={{ base: "column", md: "row" }}
+        >
+          <SimpleGrid
+            columns={{ base: 1, sm: 2, md: 2, lg: 3, xl: 3, "2xl": 3 }}
+            spacing={6}
+          >
+            {services?.map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                description={service.description}
+                title={service.title}
+              />
+            ))}
+          </SimpleGrid>
+        </Flex>
+      </Box>
     </Box>
   );
 };

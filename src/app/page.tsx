@@ -5,6 +5,7 @@ import { Box, Flex, Text, Spinner } from "@chakra-ui/react";
 import HeroHeader from "./components/HeroHeader/HeroHeader";
 import HowItWork from "./components/HowItWork/HowItWork";
 import ServicesSection from "./components/OurServices/OurServices";
+import { PlatformOverview } from "./components/PlatformOverview/PlatformOverview";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,12 +35,15 @@ export default function Home() {
         <HowItWork />
       </Box>
       <Box
-        mt={"100px"}
-        mb={"100px"}
+        mt={"10px"}
+        mb={"10px"}
         alignItems={"center"}
         justifyContent={"center"}
       >
         <ServicesSection />
+      </Box>
+      <Box>
+        <PlatformOverview />
       </Box>
     </Box>
   );

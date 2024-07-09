@@ -6,6 +6,7 @@ import HeroHeader from "./components/HeroHeader/HeroHeader";
 import HowItWork from "./components/HowItWork/HowItWork";
 import ServicesSection from "./components/OurServices/OurServices";
 import { PlatformOverview } from "./components/PlatformOverview/PlatformOverview";
+import { TeamWork } from "./components/TeamWork/TeamWork";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,16 +35,14 @@ export default function Home() {
       <Box mb={"10px"}>
         <HowItWork />
       </Box>
-      <Box
-        mt={"10px"}
-        mb={"10px"}
-        alignItems={"center"}
-        justifyContent={"center"}
-      >
+      <Box mt={"10px"} mb={"10px"}>
         <ServicesSection />
       </Box>
-      <Box>
+      <Box mt={"10px"} mb={"10px"}>
         <PlatformOverview />
+      </Box>
+      <Box mt={"10px"} mb={"10px"}>
+        <TeamWork />
       </Box>
     </Box>
   );

@@ -1,7 +1,7 @@
 // next.config.js
-/*
+
 const nextConfig = {
-  //output: 'export',
+  output: "export",
   images: {
     // If you are using the Image component, you might need to configure this
     // unoptimized: true,
@@ -13,9 +13,8 @@ const nextConfig = {
 
 module.exports = nextConfig;
 
-*/
-
-/** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} 
 const nextConfig = {};
 
 export default nextConfig;
+*/

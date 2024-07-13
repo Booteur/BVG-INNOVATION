@@ -70,7 +70,13 @@ export const TeamWork = () => {
           >
             <Box
               mt={20}
-              width={{ base: "100vw", sm: "70vw", md: "50vw", "2xl": "25vw" }}
+              width={{
+                base: "100vw",
+                sm: "70vw",
+                md: "70vw",
+                lg: "50vw",
+                "2xl": "35vw",
+              }}
             >
               <VStack spacing={5} align={"start"}>
                 <Heading pl={8}>The Perfect Creativity</Heading>

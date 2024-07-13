@@ -5,11 +5,12 @@ import {
   CardBody,
   CardFooter,
   CardProps,
+  ResponsiveValue,
 } from "@chakra-ui/react";
 import { FC } from "react";
 
 interface ICardProps extends CardProps {
-  width?: number | string;
+  width?: ResponsiveValue<number | string>;
   height?: number | string;
   bgColor?: string;
   borderRadius?: number | string;
@@ -29,18 +30,23 @@ const CardComponent: FC<ICardProps> = ({
   ...rest
 }) => {
   return (
-    <Box bgColor={bgColor} padding={"15px"} borderRadius={borderRadius}>
-      <Card overflow="hidden" variant={"filled"} size={size}>
-        <CardBody>{children}</CardBody>
-        {showButton ? (
-          <CardFooter>
-            <Button width={"full"} variant="solid" colorScheme="blue">
-              Buy now
-            </Button>
-          </CardFooter>
-        ) : null}
-      </Card>
-    </Box>
+    <Card
+      bgColor={bgColor}
+      p={"10px"}
+      borderRadius={borderRadius}
+      width={width}
+      align={"center"}
+      size={size}
+    >
+      <CardBody>{children}</CardBody>
+      {showButton ? (
+        <CardFooter>
+          <Button width={"full"} variant="solid" colorScheme="blue">
+            Buy now
+          </Button>
+        </CardFooter>
+      ) : null}
+    </Card>
   );
 };
 

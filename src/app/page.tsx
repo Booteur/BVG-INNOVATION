@@ -7,6 +7,13 @@ import HowItWork from "./components/HowItWork/HowItWork";
 import ServicesSection from "./components/OurServices/OurServices";
 import { PlatformOverview } from "./components/PlatformOverview/PlatformOverview";
 import { TeamWork } from "./components/TeamWork/TeamWork";
+import { Statistique } from "./components/Statistique/Statistique";
+import { OurMission } from "./components/OurMission/OurMission";
+import { OurValues } from "./components/OurValues/OurValues";
+import { BVGHistory } from "./components/BVGHistory/BVGHistory";
+import { Suscribe } from "./components/Suscribe/Suscribe";
+import ContactUs from "./components/Contact-us/ContactUs";
+import { Footer } from "./components/Footer/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +50,15 @@ export default function Home() {
       </Box>
       <Box mt={"10px"} mb={"10px"}>
         <TeamWork />
+      </Box>
+      <Box>
+        <BVGHistory />
+      </Box>
+      <Box mt={"50px"}>
+        <ContactUs />
+      </Box>
+      <Box mt={"50px"}>
+        <Footer />
       </Box>
     </Box>
   );

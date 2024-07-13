@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { Button, extendTheme } from "@chakra-ui/react";
 
 import breakpoints from "./beakpoints";
 import colors from "./colors";
@@ -6,6 +6,7 @@ import { fontSizes, lineHeight } from "./fontSize";
 import { TextStyles } from "./TextStyle";
 import StyledTooltip from "./ToolTipStyle";
 import { MyCalenderIcon } from "../../../public/assets/svg";
+
 export const theme = () => {
   return extendTheme({
     colors,

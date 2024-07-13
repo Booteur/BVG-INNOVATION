@@ -129,19 +129,27 @@ const colors: { [color: string]: { [opacity: number]: string } } = {
   barChatComColor: {
     500: "#06524C",
   },
+  secondTest: {
+    500: "#EDEDFF",
+  },
 };
 
-export const hexToRGB = (color: string, alpha?: number, op?: number) => {
-  const hex = getColor(color, op);
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  const a = alpha ? `, ${alpha}` : "";
+export const hexToRGB = (hexcolor: string, alpha?: number) => {
+  const r = parseInt(hexcolor?.slice(1, 3), 16);
+  const g = parseInt(hexcolor?.slice(3, 5), 16);
+  const b = parseInt(hexcolor?.slice(5, 7), 16);
 
-  return `rgba(${r},${g},${b}${a})`;
+  return `rgba(${r},${g},${b}${alpha ? `, ${alpha}` : ""})`;
 };
 
-export const getColor = (color = "primary", opacity = 500) =>
-  colors[color][opacity];
+export function getColorWithOpacity(hexColor: string, opacity: number): string {
+  opacity = Math.max(0, Math.min(1, opacity));
+  hexColor = hexColor?.replace("#", "");
+  const r = parseInt(hexColor?.slice(0, 2), 16);
+  const g = parseInt(hexColor?.slice(2, 4), 16);
+  const b = parseInt(hexColor?.slice(4, 6), 16);
+  const rgbaColor = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+  return rgbaColor;
+}
 
 export default colors;

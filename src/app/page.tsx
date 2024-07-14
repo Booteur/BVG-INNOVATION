@@ -1,27 +1,26 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Box, Flex, Text, Spinner } from "@chakra-ui/react";
-import HeroHeader from "./components/HeroHeader/HeroHeader";
+import { Box, Flex, Spinner, useBreakpointValue } from "@chakra-ui/react";
 import HowItWork from "./components/HowItWork/HowItWork";
 import ServicesSection from "./components/OurServices/OurServices";
 import { PlatformOverview } from "./components/PlatformOverview/PlatformOverview";
 import { TeamWork } from "./components/TeamWork/TeamWork";
-import { Statistique } from "./components/Statistique/Statistique";
-import { OurMission } from "./components/OurMission/OurMission";
-import { OurValues } from "./components/OurValues/OurValues";
 import { BVGHistory } from "./components/BVGHistory/BVGHistory";
-import { Suscribe } from "./components/Suscribe/Suscribe";
 import ContactUs from "./components/Contact-us/ContactUs";
 import { Footer } from "./components/Footer/Footer";
+import { NavBar } from "./components/HeroHeader/components/NavBar";
+import { Header } from "./components/HeroHeader/Header";
+import { WebNavBar } from "./components/HeroHeader/components/WebNavBar";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const responsiveMode = useBreakpointValue({ base: "mobile", md: "web" });
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // Simulate loading time
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -36,30 +35,17 @@ export default function Home() {
 
   return (
     <Box bgColor={"white"}>
-      <Box>
-        <HeroHeader />
-      </Box>
-      <Box mb={"10px"}>
-        <HowItWork />
-      </Box>
-      <Box mt={"10px"} mb={"10px"}>
-        <ServicesSection />
-      </Box>
-      <Box mt={"10px"} mb={"10px"}>
-        <PlatformOverview />
-      </Box>
-      <Box mt={"10px"} mb={"10px"}>
-        <TeamWork />
-      </Box>
-      <Box>
-        <BVGHistory />
-      </Box>
-      <Box mt={"50px"}>
+      <Box>{responsiveMode === "web" ? <WebNavBar /> : <NavBar />}</Box>
+      <Header />
+      <HowItWork />
+      <ServicesSection />
+      <PlatformOverview />
+      <TeamWork />
+      <BVGHistory />
+      <Box mt={"30px"} mb={"40px"}>
         <ContactUs />
       </Box>
-      <Box mt={"50px"}>
-        <Footer />
-      </Box>
+      <Footer />
     </Box>
   );
 }

@@ -18,13 +18,13 @@ import { MailIcon, TelIcon } from "../../../../../public/assets/svg";
 
 export const ContactUsMobileDisplay = () => {
   return (
-    <Flex flexDirection="column" alignItems="center" width={"100%"} p={5}>
-      <SimpleGrid columns={2} spacing={5}>
+    <Flex flexDirection="column" align={"center"} width={"100%"} p={5}>
+      <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={5}>
         <GridItem>
           <ContactCardMobile
             icon={<MailIcon width={"18px"} height={"18px"} fill={"#FFF"} />}
             title="Mail Us"
-            info="contact@gmail.com"
+            info="contact@bvg-innovation.tech."
           />
         </GridItem>
         <GridItem>
@@ -41,7 +41,7 @@ export const ContactUsMobileDisplay = () => {
         bgColor={"white"}
         borderRadius={"20px"}
         boxShadow={"lg"}
-        w={{ base: "100%", sm: "100%" }}
+        w={"100%"}
         p={5}
       >
         <FormControl id="name" mb={4} isRequired>
@@ -60,7 +60,7 @@ export const ContactUsMobileDisplay = () => {
           <FormLabel>Objet</FormLabel>
           <Input placeholder="comment pouvons nous aider" height={"47px"} />
         </FormControl>
-        <FormControl id="message" isRequired height={"200px"}>
+        <FormControl id="message" isRequired mb={8}>
           <FormLabel>Message</FormLabel>
           <Textarea placeholder="bonjour, je voudrais parler de la facon de..." />
         </FormControl>
@@ -89,15 +89,15 @@ export const ContactCardMobile = ({ icon, title, info }: any) => {
         borderRadius={"10px"}
         borderWidth={2}
         borderColor={"#E8E8E8"}
-        width={{ base: "300px", sm: "300px" }}
+        width={"100%"}
         p={2}
       >
-        <VStack align={"start"} justify={"start"}>
-          <Flex align={"center"} justify={"center"} gap={2}>
+        <Box width={"100%"}>
+          <HStack>
             <Flex
               rounded={"lg"}
-              width={{ base: "40px", sm: "70px" }}
-              height={{ base: "40px", sm: "70px" }}
+              width={{ base: "40px", sm: "40px" }}
+              height={{ base: "40px", sm: "40px" }}
               bgColor={"primary.500"}
               align={"center"}
               justify={"center"}
@@ -105,15 +105,16 @@ export const ContactCardMobile = ({ icon, title, info }: any) => {
               {icon}
             </Flex>
 
-            <Text fontSize={"16px"} color={"black"}>
-              {title}
-            </Text>
-          </Flex>
-
-          <Text fontSize={{ base: "14px", sm: "22px" }} color={"gray.500"}>
-            {info}
-          </Text>
-        </VStack>
+            <VStack align={"start"}>
+              <Text fontSize={{ base: "14px", sm: "18px" }} color={"black"}>
+                {title}
+              </Text>
+              <Text fontSize={{ base: "14px", sm: "18px" }} color={"gray.500"}>
+                {info}
+              </Text>
+            </VStack>
+          </HStack>
+        </Box>
       </Flex>
     </HStack>
   );

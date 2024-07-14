@@ -46,7 +46,7 @@ const ContactUs = () => {
           backgroundRepeat="no-repeat"
           backgroundPosition="right"
           backgroundSize="contain"
-          h="110vh"
+          h={"80vh"}
         >
           <ContactUsMobileDisplay />
         </Flex>

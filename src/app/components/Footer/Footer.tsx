@@ -21,52 +21,47 @@ export const Footer = () => {
         align={{ base: "center", md: "flex-start" }}
         gap={{ base: 10, md: 20 }}
       >
-        <VStack
-          spacing={5}
+        <Box
+          p={5}
           bgColor={"white"}
           borderRadius={"20px"}
           width={{ base: "100%", sm: "400px", md: "350px" }}
-          height={"250px"}
-          align={"center"}
-          justify={"center"}
+          height={{ base: "100%", sm: "200px" }}
         >
-          <Flex align={"center"} justifyContent={"center"} gap={2}>
-            <Box
-              width={{ base: "30px", sm: "35px", md: "65px" }}
-              height={{ base: "30px", sm: "35px", md: "65px" }}
-              borderRadius="9px"
-              bgColor="#F5F5F5"
-            >
-              <Image
-                alt="hero-image"
-                width={{ base: 30, sm: 35, md: 65 }}
-                height={{ base: 30, sm: 35, md: 65 }}
-                src="/assets/logo/losange-icon.png"
-              />
-            </Box>
-            <Text
-              color="black"
-              fontSize={{ base: "md", sm: "lg", md: "2xl" }}
-              fontWeight="extrabold"
-            >
-              BVG - INNOVATION
-            </Text>
-          </Flex>
-          <VStack spacing={5}>
+          <VStack align={"start"} justify={"start"} spacing={3} p={2}>
+            <Flex align={"center"} justifyContent={"center"} gap={2}>
+              <Box
+                width={{ base: "50px", sm: "60px" }}
+                height={{ base: "50px", sm: "60px" }}
+                borderRadius="9px"
+                bgColor="#F5F5F5"
+                boxShadow={"lg"}
+              >
+                <Image
+                  alt="hero-image"
+                  width={{ base: 50, sm: 65 }}
+                  height={{ base: 50, sm: 65 }}
+                  src="/assets/logo/losange-icon.png"
+                />
+              </Box>
+              <Text
+                color="black"
+                fontSize={{ base: "2xl", sm: "3xl" }}
+                fontWeight="extrabold"
+              >
+                BVG - INNOVATION
+              </Text>
+            </Flex>
+
             <Flex gap={4} direction={"column"}>
               <Text>1811 Silverside Rd, Wilmington, DE 19810, USA</Text>
               <Text>US: +1 (001) 256-0034</Text>
               <Text>email: contact@bvg-innovation.tech</Text>
             </Flex>
           </VStack>
-        </VStack>
-        <VStack
-          align={{ base: "center", sm: "center", md: "start" }}
-          justify={{ base: "center", sm: "center", md: "start" }}
-        >
+        </Box>
+        <VStack>
           <Flex
-            align={{ base: "flex-start", md: "start" }}
-            justify={{ base: "flex-start", md: "start" }}
             flexDirection={{ base: "row", sm: "column", md: "column" }}
             gap={{ base: 10, sm: 10, md: 10 }}
           >
@@ -78,7 +73,10 @@ export const Footer = () => {
         </VStack>
       </Flex>
 
-      <Box mt={10} width={{ base: "100%", md: "70%" }}>
+      <Box
+        mt={"20px"}
+        width={{ base: "100%", md: "85%", lg: "60%", "2xl": "35%" }}
+      >
         <Flex align={"flex-start"} justify={{ base: "center", md: "flex-end" }}>
           <Divider width={{ base: "100%", md: "420px" }} />
         </Flex>
@@ -87,8 +85,8 @@ export const Footer = () => {
         direction={{ base: "column", md: "row" }}
         align={{ base: "flex-start", md: "center" }}
         justify={{ base: "flex-start", md: "space-between" }}
-        width={{ base: "100%", md: "70%" }}
-        mt={5}
+        width={{ base: "100%", md: "80%", lg: "60%", "2xl": "35%" }}
+        mt={"10px"}
       >
         <Flex
           align={{ base: "flex-start", md: "center" }}

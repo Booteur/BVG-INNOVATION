@@ -16,56 +16,57 @@ import { CardItem } from "./components/SecondCardItem";
 export const PlatformOverview = () => {
   const responsive = useBreakpointValue({ base: "mobile", md: "web" });
   return (
-    <Box p={4}>
+    <Box mt={"50px"} mb={"50px"}>
       <Flex
         p={3}
         alignItems={"center"}
-        justifyContent={{ base: "none", md: "space-around" }}
-        flexDirection={{ base: "column", sm: "row", md: "row" }}
+        justifyContent={{
+          base: "none",
+          md: "space-around",
+        }}
+        flexDirection={{ base: "column", sm: "column", md: "row" }}
       >
-        <Box>
-          <VStack
-            align={{ base: "center", sm: "start", md: "start" }}
+        <VStack
+          align={{ base: "center", sm: "center", md: "start" }}
+          justifyContent={"center"}
+          width={{ base: "100%", md: "280px" }}
+          spacing={4}
+        >
+          <Flex
+            bgColor={"#FFF3E1"}
+            width={"155px"}
+            height={"50px"}
+            alignItems={"center"}
             justifyContent={"center"}
-            width={{ base: "100%", md: "280px" }}
-            spacing={4}
+            borderRadius={"20px"}
           >
-            <Flex
-              bgColor={"#FFF3E1"}
-              width={"155px"}
-              height={"50px"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              borderRadius={"20px"}
-            >
-              <Text
-                fontSize={{ base: "xl", md: "2xl" }}
-                color={"secondary.500"}
-              >
-                Platform
-              </Text>
-            </Flex>
-            <Text
-              textAlign={{ base: "center", sm: "left", md: "left" }}
-              fontSize={{ base: "xl", sm: "2xl", md: "3xl" }}
-              color={"black"}
-            >
-              Get an overview of the{" "}
-              <span style={{ fontWeight: "bold" }}>BVG-INNOVATION </span> Tools
+            <Text fontSize={{ base: "xl", md: "2xl" }} color={"secondary.500"}>
+              Platform
             </Text>
-          </VStack>
-        </Box>
-        <Box width={{ base: "100%", md: "400px" }}>
+          </Flex>
           <Text
-            textAlign={{ base: "center", sm: "left", md: "left" }}
-            fontSize={{ base: "xl", sm: "md", md: "xl" }}
-            color={"black"}
+            textAlign={{ base: "center", sm: "center", md: "left" }}
+            fontSize={{ base: "xl", sm: "2xl", md: "2xl" }}
+          >
+            Get an overview of the{" "}
+            <span style={{ fontWeight: "bold" }}>BVG-INNOVATION </span> Tools
+          </Text>
+        </VStack>
+
+        <Flex
+          width={{ base: "100%", md: "400px" }}
+          align={"center"}
+          justify={"center"}
+        >
+          <Text
+            textAlign={{ base: "center", sm: "center", md: "right" }}
+            fontSize={{ base: "xl", sm: "xl", md: "xl" }}
           >
             Provide the best, most intuitive support across all channels.
             Proactively understand customer needs to serve excellence the first
             time.
           </Text>
-        </Box>
+        </Flex>
       </Flex>
       {responsive === "mobile" ? (
         <>

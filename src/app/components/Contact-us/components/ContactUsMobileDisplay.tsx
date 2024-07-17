@@ -12,8 +12,9 @@ import {
   Text,
   SimpleGrid,
   GridItem,
+  useColorMode,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { ReactNode } from "react";
 import { MailIcon, TelIcon } from "../../../../../public/assets/svg";
 
 export const ContactUsMobileDisplay = () => {
@@ -22,14 +23,14 @@ export const ContactUsMobileDisplay = () => {
       <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={5}>
         <GridItem>
           <ContactCardMobile
-            icon={<MailIcon width={"18px"} height={"18px"} fill={"#FFF"} />}
+            icon={<MailIcon width={"18px"} height={"18px"} fill={"white"} />}
             title="Mail Us"
             info="contact@bvg-innovation.tech."
           />
         </GridItem>
         <GridItem>
           <ContactCardMobile
-            icon={<TelIcon width={"18px"} height={"18px"} fill={"#FFF"} />}
+            icon={<TelIcon width={"18px"} height={"18px"} fill={"white"} />}
             title="Call Us"
             info="+216 51 719 140"
           />
@@ -45,44 +46,43 @@ export const ContactUsMobileDisplay = () => {
         p={5}
       >
         <FormControl id="name" mb={4} isRequired>
-          <FormLabel>Nom Et Prénom</FormLabel>
+          <FormLabel color={"black"}>Nom Et Prénom</FormLabel>
           <Input
             placeholder="john david"
             height={"47px"}
-            fontSize="16px" // Set the font size to 16px
+            fontSize="16px"
+            borderColor={"gray.300"}
           />
         </FormControl>
         <FormControl id="email" mb={4} isRequired>
-          <FormLabel>Votre Email</FormLabel>
+          <FormLabel color={"black"}>Votre Email</FormLabel>
           <Input
             type="email"
             placeholder="exemple@votremail.com"
             height={"47px"}
-            fontSize="16px" // Set the font size to 16px
+            fontSize="16px"
+            borderColor={"gray.300"}
           />
         </FormControl>
         <FormControl id="subject" mb={4} isRequired>
-          <FormLabel>Objet</FormLabel>
+          <FormLabel color={"black"}>Objet</FormLabel>
           <Input
             placeholder="comment pouvons nous aider"
             height={"47px"}
-            fontSize="16px" // Set the font size to 16px
+            fontSize="16px"
+            borderColor={"gray.300"}
           />
         </FormControl>
         <FormControl id="message" isRequired mb={8}>
-          <FormLabel>Message</FormLabel>
+          <FormLabel color={"black"}>Message</FormLabel>
           <Textarea
             placeholder="bonjour, je voudrais parler de la facon de..."
-            fontSize="16px" // Set the font size to 16px
+            fontSize="16px"
+            borderColor={"gray.300"}
           />
         </FormControl>
         <Center>
-          <Button
-            colorScheme="primary"
-            size="lg"
-            w="206px"
-            borderRadius={"79px"}
-          >
+          <Button color={"white"} size="lg" w="206px" borderRadius={"79px"}>
             Envoyer le message
           </Button>
         </Center>
@@ -91,7 +91,16 @@ export const ContactUsMobileDisplay = () => {
   );
 };
 
-export const ContactCardMobile = ({ icon, title, info }: any) => {
+export const ContactCardMobile = ({
+  icon,
+  title,
+  info,
+}: {
+  icon: ReactNode;
+  title: string;
+  info: string;
+}) => {
+  const { colorMode } = useColorMode();
   return (
     <HStack>
       <Flex
@@ -111,7 +120,7 @@ export const ContactCardMobile = ({ icon, title, info }: any) => {
               rounded={"lg"}
               width={{ base: "40px", sm: "40px" }}
               height={{ base: "40px", sm: "40px" }}
-              bgColor={"primary.500"}
+              bgColor={colorMode === "light" ? "primary.500" : "secondary.500"}
               align={"center"}
               justify={"center"}
             >

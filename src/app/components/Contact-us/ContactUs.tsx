@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   Box,
   Flex,
@@ -12,6 +12,7 @@ import {
   Center,
   HStack,
   VStack,
+  useColorMode,
 } from "@chakra-ui/react";
 import { MailIcon, TelIcon } from "../../../../public/assets/svg";
 import { ContactUsWebDisplay } from "./components/ContactUsWebDisplay";
@@ -54,7 +55,16 @@ const ContactUs = () => {
   );
 };
 
-export const ContactCard = ({ icon, title, info }: any) => {
+export const ContactCard = ({
+  icon,
+  title,
+  info,
+}: {
+  icon: ReactNode;
+  title: string;
+  info: string;
+}) => {
+  const { colorMode } = useColorMode();
   return (
     <Center>
       <HStack>
@@ -74,7 +84,7 @@ export const ContactCard = ({ icon, title, info }: any) => {
             <Flex
               width={"73px"}
               height={"73px"}
-              bgColor={"primary.500"}
+              bgColor={colorMode === "light" ? "primary.500" : "secondary.500"}
               borderRadius={"20px"}
               alignItems={"center"}
               justifyContent={"center"}
@@ -83,7 +93,7 @@ export const ContactCard = ({ icon, title, info }: any) => {
             </Flex>
             <Text color={"black"}>{title}</Text>
           </Flex>
-          <Text fontSize={"16px"} color={"gray.500"}>
+          <Text fontSize={"22px"} color={"gray.500"}>
             {info}
           </Text>
         </Flex>

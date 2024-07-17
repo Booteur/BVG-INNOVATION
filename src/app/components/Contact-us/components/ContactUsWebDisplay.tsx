@@ -24,12 +24,12 @@ export const ContactUsWebDisplay = () => {
         width={{ md: "85vw", lg: "30vw", "2xl": "20vw" }}
       >
         <ContactCard
-          icon={<MailIcon width={"42px"} height={"42px"} fill={"#FFF"} />}
+          icon={<MailIcon width={"42px"} height={"42px"} fill={"white"} />}
           title="Mail Us"
           info="contact@bvg-innovation.tech"
         />
         <ContactCard
-          icon={<TelIcon width={"42px"} height={"42px"} fill={"#FFF"} />}
+          icon={<TelIcon width={"42px"} height={"42px"} fill={"white"} />}
           title="Call Us"
           info="+216 51 719 140"
         />
@@ -46,31 +46,26 @@ export const ContactUsWebDisplay = () => {
           <VStack align={"start"} justify={"center"} spacing={10} p={"50px"}>
             <HStack spacing={5} width={"100%"}>
               <FormControl id="message" isRequired>
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" height={"47px"} />
+                <FormLabel color={"black"}>Email address</FormLabel>
+                <Input borderColor={"gray.300"} type="email" height={"47px"} />
               </FormControl>
               <FormControl id="message" isRequired>
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" height={"47px"} />
+                <FormLabel color={"black"}>Email address</FormLabel>
+                <Input borderColor={"gray.300"} type="email" height={"47px"} />
               </FormControl>
             </HStack>
             <FormControl id="message" isRequired width={"50%"}>
-              <FormLabel>Email address</FormLabel>
-              <Input type="email" height={"47px"} />
+              <FormLabel color={"black"}>Email address</FormLabel>
+              <Input borderColor={"gray.300"} type="email" height={"47px"} />
             </FormControl>
             <FormControl id="message" isRequired width={"100%"}>
-              <FormLabel>Message</FormLabel>
-              <Textarea size={"lg"} height={"200px"} />
+              <FormLabel color={"black"}>Message</FormLabel>
+              <Textarea borderColor={"gray.300"} size={"lg"} height={"200px"} />
             </FormControl>
           </VStack>
 
           <Center pb={10}>
-            <Button
-              colorScheme="primary"
-              size="lg"
-              w="206px"
-              borderRadius={"79px"}
-            >
+            <Button size="lg" w="206px" borderRadius={"79px"} color={"white"}>
               Envoyer le message
             </Button>
           </Center>

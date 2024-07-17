@@ -3,16 +3,17 @@ import {
   Heading,
   Flex,
   Text,
-  Image,
   Box,
   useBreakpointValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
+import Image from "next/image";
 
 export const Header = () => {
   const responsiveMode = useBreakpointValue({ base: "mobile", md: "web" });
-
+  const { colorMode } = useColorMode();
   const MotionText = motion(Text);
   const MotionButton = motion(Button);
   const MotionHeading = motion(Heading);
@@ -23,7 +24,7 @@ export const Header = () => {
     tap: { scale: 0.9 },
   };
   return (
-    <Box p={4}>
+    <Box>
       {responsiveMode === "web" ? (
         <Box alignItems={"center"} justifyItems={"center"} mt={"80px"}>
           <Flex
@@ -58,7 +59,6 @@ export const Header = () => {
                 All-In-One Primarily Software.
               </MotionText>
               <MotionButton
-                colorScheme="primary"
                 fontSize={{ base: "md", sm: "lg", md: "3xl" }}
                 size={{ sm: "sm", md: "lg" }}
                 height={{ sm: "40px", md: "56px" }}
@@ -66,6 +66,7 @@ export const Header = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
+                color={"white"}
               >
                 Contact us
               </MotionButton>
@@ -77,9 +78,13 @@ export const Header = () => {
             >
               <MotionImage
                 alt="hero-image"
-                width="100%"
-                height="100%"
-                src="/assets/banner/bvg-shadow.png"
+                width={1000}
+                height={1000}
+                src={
+                  colorMode === "light"
+                    ? "/assets/banner/bvg-shadow.png"
+                    : "/assets/images/bvg-cart/bvg-shadow-cart.png"
+                }
               />
             </MotionBox>
           </Flex>
@@ -119,7 +124,6 @@ export const Header = () => {
                 All-In-One Primarily Software.
               </MotionText>
               <MotionButton
-                colorScheme="primary"
                 fontSize={{ base: "xl" }}
                 size={{ base: "lg" }}
                 height={{ base: "36px" }}
@@ -127,6 +131,7 @@ export const Header = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
+                color={"white"}
               >
                 Contact us
               </MotionButton>
@@ -138,9 +143,13 @@ export const Header = () => {
             >
               <MotionImage
                 alt="hero-image"
-                width="100%"
-                height="100%"
-                src="/assets/banner/bvg-shadow.png"
+                width={500}
+                height={500}
+                src={
+                  colorMode === "light"
+                    ? "/assets/banner/bvg-shadow.png"
+                    : "/assets/images/bvg-cart/bvg-shadow-cart.png"
+                }
               />
             </MotionBox>
           </Flex>

@@ -18,7 +18,7 @@ export const services = [
       "Organisez facilement les informations sur vos propriétés sous gestion, vos locataires et propriétaires",
   },
   {
-    icon: "url('/assets/images/ui-ux.jpg')",
+    icon: "/assets/images/ui-ux.jpg",
     title: "Infographie",
     description:
       "Automatisez vos quittances mensuelles en quelques clics ainsi que la confirmation et l’envoi des quittances post-paiement.",

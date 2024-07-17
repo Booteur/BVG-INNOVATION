@@ -1,7 +1,6 @@
 import {
   Box,
   Flex,
-  Image,
   Heading,
   Text,
   Button,
@@ -11,6 +10,7 @@ import {
 import { motion } from "framer-motion";
 import React from "react";
 import { IPlatform } from "../interface/platform";
+import Image from "next/image";
 
 export const CardItem = ({
   icon,
@@ -18,7 +18,6 @@ export const CardItem = ({
   title,
   description,
   bgColor,
-  width,
 }: IPlatform) => {
   const MotionText = motion(Text);
   const MotionButton = motion(Button);
@@ -42,22 +41,22 @@ export const CardItem = ({
       <Box p={5}>
         <Flex>
           <VStack spacing={{ base: 2, sm: 4, md: 6 }} align={"start"}>
-            <Image
-              alt="test-button"
-              src={icon}
-              width={{ base: "50%", sm: "25%", md: "20%" }}
-              height={{ base: "50%", sm: "25%", md: "30%" }}
-            />
-            <Heading fontSize={{ base: "xl", sm: "2xl", md: "3xl" }}>
+            <Image alt="test-button" src={icon} width={150} height={150} />
+            <Heading
+              color={"black"}
+              fontSize={{ base: "xl", sm: "2xl", md: "2xl" }}
+            >
               {title}
             </Heading>
-            <Text fontSize={{ base: "md", md: "2xl" }}>{description}</Text>
+            <Text color={"black"} fontSize={{ base: "md", md: "xl" }}>
+              {description}
+            </Text>
           </VStack>
         </Flex>
       </Box>
       {(image && responsive === "web") || responsive === "tablet" ? (
         <Box bgColor={bgColor ?? "none"} me={6}>
-          <Image alt="hero-image" src={image} />
+          <Image alt="hero-image" src={image ?? ""} width={300} height={300} />
         </Box>
       ) : null}
     </Flex>

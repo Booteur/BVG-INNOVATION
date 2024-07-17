@@ -12,7 +12,6 @@ export const OurValues = () => {
           justifyContent={"center"}
           direction={"column"}
           p={3}
-          
         >
           <Flex
             color={"primary.500"}
@@ -29,16 +28,13 @@ export const OurValues = () => {
             mt={"20px"}
             alignItems={"center"}
             justifyContent={"center"}
-            maxW={"25%"}
             flexDirection={"column"}
-            p={3}
           >
             <Box width={{ base: "250px", sm: "250px", md: "450px" }}>
               <Text
                 fontWeight={"bold"}
                 fontSize={{ base: "18px", sm: "18px", md: "30px", lg: "30px" }}
                 textAlign={"center"}
-                color={"black"}
               >
                 Lhistoire et les valeurs derrière BVG-INNOVATIONS
               </Text>

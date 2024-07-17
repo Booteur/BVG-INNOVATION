@@ -4,11 +4,13 @@ import {
   VStack,
   Text,
   Heading,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 import { OurValuesData } from "../dummyOurValues";
 
 export const OurValuesMobileDisplay = () => {
+  const { colorMode } = useColorMode();
   return (
     <Flex align={"center"} justify={"center"}>
       <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={5}>
@@ -16,7 +18,7 @@ export const OurValuesMobileDisplay = () => {
           <VStack
             key={index}
             rounded={"lg"}
-            bgColor={"#F9F9F9"}
+            bgColor={colorMode === "light" ? "#F9F9F9" : "primary.500"}
             p={5}
             spacing={5}
             width={{ base: "300px", sm: "330px" }}
@@ -28,17 +30,21 @@ export const OurValuesMobileDisplay = () => {
                 rounded={"lg"}
                 width={{ base: "50px", sm: "70px" }}
                 height={{ base: "50px", sm: "70px" }}
-                bgColor={"primary.500"}
+                bgColor={
+                  colorMode === "light" ? "primary.500" : "secondary.500"
+                }
                 align={"center"}
                 justify={"center"}
               >
                 {values.icon}
               </Flex>
-              <Heading color={"black"}>{values.title}</Heading>
+              <Text fontWeight={"bold"} fontSize={{ base: "2xl", sm: "3xl" }}>
+                {values.title}
+              </Text>
             </Flex>
 
             <VStack align={"start"}>
-              <Text lineHeight={2} color={"black"} textAlign={"justify"}>
+              <Text lineHeight={"30px"} textAlign={"justify"}>
                 {values.description}
               </Text>
             </VStack>

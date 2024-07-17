@@ -1,8 +1,9 @@
 "use client";
 
-import { Box, Flex, HStack, Text, Image } from "@chakra-ui/react";
+import { Box, Flex, HStack, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { IService } from "./interface/service";
+import Image from "next/image";
 
 const ServiceCard = ({ icon, title, description }: IService) => {
   const MotionBox = motion(Box);
@@ -19,21 +20,11 @@ const ServiceCard = ({ icon, title, description }: IService) => {
       whileHover={{ scale: 1.05 }}
       p={4}
     >
-      <HStack
-        spacing={{ base: 4, sm: 5, md: 6 }}
-        p={3}
-        alignItems="center"
-        justifyContent={"center"}
-      >
+      <HStack spacing={{ base: 4, sm: 5, md: 6 }}>
         <Flex width={"50%"}>
-          <Image
-            alt={"service-icon"}
-            src={icon}
-            borderRadius={"12px"}
-            width={{ base: "100%", md: "200px" }}
-          />
+          <Image alt={"service-icon"} src={icon} width={200} height={200} />
         </Flex>
-        <Flex width={"50%"}>
+        <Flex>
           <Text
             fontWeight={"bold"}
             fontSize={{ base: "xl", md: "2xl" }}

@@ -7,6 +7,7 @@ import {
   Heading,
   useBreakpointValue,
   GridItem,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 import { OurValuesData } from "./dummyOurValues";
@@ -18,25 +19,29 @@ export const OurValuesComponent = () => {
     sm: "tablet",
     md: "web",
   });
+  const { colorMode } = useColorMode();
 
   return (
-    <Flex align={"center"} justify={"center"}>
+    <Flex align={"center"} justify={"center"} mt={"40px"}>
       {responsive === "web" ? (
         <SimpleGrid columns={2} spacing={5}>
           {OurValuesData?.map((values, index) => (
             <GridItem boxShadow={"lg"} key={index}>
               <HStack
-                width={"450px"}
+                width={"500px"}
                 rounded={"lg"}
-                bgColor={"#F9F9F9"}
+                bgColor={colorMode === "light" ? "#F9F9F9" : "primary.500"}
                 p={5}
                 spacing={5}
+                boxShadow={"lg"}
               >
                 <Flex
                   rounded={"lg"}
-                  width={"250px"}
+                  width={"300px"}
                   height={"120px"}
-                  bgColor={"primary.500"}
+                  bgColor={
+                    colorMode === "light" ? "primary.500" : "secondary.500"
+                  }
                   align={"center"}
                   justify={"center"}
                 >
@@ -48,13 +53,11 @@ export const OurValuesComponent = () => {
                       md: "20px",
                       lg: "25px",
                     }}
-                    color={"black"}
+                    fontWeight={"bold"}
                   >
                     {values.title}
                   </Text>
-                  <Text lineHeight={2} color={"black"}>
-                    {values.description}
-                  </Text>
+                  <Text lineHeight={"30px"}>{values.description}</Text>
                 </VStack>
               </HStack>
             </GridItem>

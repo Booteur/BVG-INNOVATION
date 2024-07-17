@@ -85,15 +85,13 @@ export const NavBar = () => {
           </MotionText>
         </Flex>
 
-        <Flex align="center" gap={4}>
-          <IconButton
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            onClick={isOpen ? onClose : onOpen}
-            bgColor={colorMode === "light" ? "#F9F9F9" : "secondary.500"}
-            boxShadow={"lg"}
-            aria-label="Open Menu"
-          />
-        </Flex>
+        <IconButton
+          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          onClick={isOpen ? onClose : onOpen}
+          bgColor={colorMode === "light" ? "#F9F9F9" : "secondary.500"}
+          boxShadow={"lg"}
+          aria-label="Open Menu"
+        />
 
         <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
           <DrawerOverlay>

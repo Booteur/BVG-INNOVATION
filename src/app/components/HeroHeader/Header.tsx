@@ -24,7 +24,7 @@ export const Header = () => {
     tap: { scale: 0.9 },
   };
   return (
-    <Box>
+    <Box p={4}>
       {responsiveMode === "web" ? (
         <Box alignItems={"center"} justifyItems={"center"} mt={"80px"}>
           <Flex

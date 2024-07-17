@@ -27,6 +27,7 @@ export const FirstCardItem = ({ icon, title, description }: IPlatform) => {
       borderRadius={"10px"}
       width={{ base: "100%", md: "332px" }}
       height={{ base: "auto", sm: "210px", md: "225px", "2xl": "260px" }}
+      boxShadow={"lg"}
     >
       <Box p={5}>
         <Flex>

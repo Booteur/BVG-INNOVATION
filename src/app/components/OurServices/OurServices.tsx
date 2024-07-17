@@ -22,8 +22,8 @@ const ServicesSection = () => {
   };
 
   return (
-    <Box p={4}>
-      <Box p={3}>
+    <Box>
+      <Box>
         <Flex
           alignItems={"center"}
           justifyContent={"center"}

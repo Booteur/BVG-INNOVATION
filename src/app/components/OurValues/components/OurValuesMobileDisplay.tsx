@@ -1,12 +1,9 @@
 import {
   Flex,
   SimpleGrid,
-  HStack,
   VStack,
   Text,
   Heading,
-  useBreakpointValue,
-  Box,
 } from "@chakra-ui/react";
 import React from "react";
 import { OurValuesData } from "../dummyOurValues";
@@ -24,6 +21,7 @@ export const OurValuesMobileDisplay = () => {
             spacing={5}
             width={{ base: "300px", sm: "330px" }}
             align={"start"}
+            boxShadow={"lg"}
           >
             <Flex align={"center"} justify={"center"} gap={5}>
               <Flex

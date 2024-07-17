@@ -5,13 +5,14 @@ import { OurValuesComponent } from "./OurValuesComponent";
 
 export const OurValues = () => {
   return (
-    <Box p={4}>
-      <Box p={3}>
+    <Box>
+      <Box>
         <Flex
           alignItems={"center"}
           justifyContent={"center"}
           direction={"column"}
           p={3}
+          
         >
           <Flex
             color={"primary.500"}

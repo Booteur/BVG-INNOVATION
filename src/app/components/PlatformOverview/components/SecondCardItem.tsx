@@ -37,6 +37,7 @@ export const CardItem = ({
       justify={"center"}
       borderRadius={"10px"}
       p={4}
+      boxShadow={"lg"}
     >
       <Box p={5}>
         <Flex>

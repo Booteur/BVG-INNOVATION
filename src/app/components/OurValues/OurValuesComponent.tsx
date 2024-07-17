@@ -24,7 +24,7 @@ export const OurValuesComponent = () => {
       {responsive === "web" ? (
         <SimpleGrid columns={2} spacing={5}>
           {OurValuesData?.map((values, index) => (
-            <GridItem key={index}>
+            <GridItem boxShadow={"lg"} key={index}>
               <HStack
                 width={"450px"}
                 rounded={"lg"}

@@ -1,16 +1,8 @@
-import {
-  Box,
-  Flex,
-  Image,
-  Heading,
-  Text,
-  Button,
-  VStack,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Button, VStack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { IPlatform } from "../interface/platform";
+import Image from "next/image";
 
 export const FirstCardItem = ({ icon, title, description }: IPlatform) => {
   const MotionText = motion(Text);
@@ -25,21 +17,19 @@ export const FirstCardItem = ({ icon, title, description }: IPlatform) => {
       align={"center"}
       justify={"space-between"}
       borderRadius={"10px"}
-      width={{ base: "100%", md: "332px" }}
-      height={{ base: "auto", sm: "210px", md: "225px", "2xl": "260px" }}
+      width={{ base: "100%", md: "400px" }}
       boxShadow={"lg"}
     >
       <Box p={5}>
         <Flex>
           <VStack spacing={6} align={"start"}>
-            <Image
-              alt="test-button"
-              src={icon}
-              width={{ base: "50%", sm: "40%", md: "30%" }}
-              height={{ base: "50%", sm: "40%", md: "30%" }}
-            />
-            <Heading fontSize={{ base: "xl", md: "2xl" }}>{title}</Heading>
-            <Text fontSize={{ base: "md", md: "2xl" }}>{description}</Text>
+            <Image alt="test-button" src={icon} width={150} height={150} />
+            <Heading color={"black"} fontSize={{ base: "xl", md: "2xl" }}>
+              {title}
+            </Heading>
+            <Text color={"black"} fontSize={{ base: "md", md: "xl" }}>
+              {description}
+            </Text>
           </VStack>
         </Flex>
       </Box>

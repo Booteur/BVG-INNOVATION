@@ -1,14 +1,13 @@
 import {
   VStack,
-  Flex,
   Box,
   Text,
   Heading,
   Stack,
-  Image,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import React from "react";
+import Image from "next/image";
 
 export const OurMission = () => {
   return (
@@ -39,7 +38,12 @@ export const OurMission = () => {
           </Stack>
         </VStack>
         <Box>
-          <Image alt="mission" src="/assets/images/missions/mission.png" />
+          <Image
+            alt="mission"
+            src="/assets/images/missions/mission.png"
+            width={700}
+            height={700}
+          />
         </Box>
       </Stack>
     </Box>

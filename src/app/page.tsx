@@ -34,7 +34,7 @@ export default function Home() {
   }
 
   return (
-    <Box bgColor={"white"}>
+    <Box>
       <Box>{responsiveMode === "web" ? <WebNavBar /> : <NavBar />}</Box>
       <Header />
       <HowItWork />

@@ -1,29 +1,32 @@
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { CloseIcon, HamburgerIcon, SunIcon, MoonIcon } from "@chakra-ui/icons";
 import {
   Button,
   Flex,
   Text,
   Box,
-  Image,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerHeader,
   DrawerOverlay,
   Stack,
   useDisclosure,
   IconButton,
+  useColorMode,
+  Switch,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { Links } from "../dummyLinks";
+import Image from "next/image";
 
 export const NavBar = () => {
   const MotionText = motion(Text);
   const MotionImage = motion(Image);
   const MotionBox = motion(Box);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,7 +46,6 @@ export const NavBar = () => {
 
   return (
     <Box
-      bgColor={"red"}
       position="fixed"
       width="100%"
       zIndex="10000"
@@ -63,8 +65,8 @@ export const NavBar = () => {
           >
             <MotionImage
               alt="hero-image"
-              width={{ base: 50, sm: 35 }}
-              height={{ base: 50, sm: 35 }}
+              width={50}
+              height={50}
               src="/assets/logo/losange-icon.png"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -83,12 +85,15 @@ export const NavBar = () => {
           </MotionText>
         </Flex>
 
-        <IconButton
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          onClick={isOpen ? onClose : onOpen}
-          _hover={{ backgroundColor: "secondary.500" }}
-          aria-label="Open Menu"
-        />
+        <Flex align="center" gap={4}>
+          <IconButton
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            onClick={isOpen ? onClose : onOpen}
+            bgColor={colorMode === "light" ? "#F9F9F9" : "secondary.500"}
+            boxShadow={"lg"}
+            aria-label="Open Menu"
+          />
+        </Flex>
 
         <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
           <DrawerOverlay>
@@ -121,18 +126,29 @@ export const NavBar = () => {
                   <Flex direction="row" gap={2} width={"100%"}>
                     <Button
                       width={"50%"}
-                      colorScheme="primary"
+                      bgColor="primary.500"
                       onClick={onClose}
+                      color={"white"}
                     >
                       Contact-us
                     </Button>
-                    <Button
-                      width={"50%"}
-                      colorScheme="secondary"
-                      onClick={onClose}
-                    >
+                    <Button width={"50%"} color={"white"} onClick={onClose}>
                       Book a schedule
                     </Button>
+                  </Flex>
+                  <Flex mt={"40px"} gap={5} alignItems="center">
+                    <SunIcon
+                      color={colorMode === "light" ? "primary.500" : "black"}
+                    />
+                    <Switch
+                      colorScheme={colorMode === "light" ? "none" : "secondary"}
+                      onChange={toggleColorMode}
+                      isChecked={colorMode === "dark"}
+                      display="flex"
+                    />
+                    <MoonIcon
+                      color={colorMode === "light" ? "black" : "secondary.500"}
+                    />
                   </Flex>
                 </Stack>
               </DrawerBody>

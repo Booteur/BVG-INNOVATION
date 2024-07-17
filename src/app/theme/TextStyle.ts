@@ -5,7 +5,7 @@ export const TextStyles: Record<string, StyleConfig> = {
     baseStyle: {},
     variants: {
       "panel-title": {
-        fontSize: "16",
+        fontSize: "16px",
         fontWeight: "bold",
         color: "secondary.500",
         size: "md",

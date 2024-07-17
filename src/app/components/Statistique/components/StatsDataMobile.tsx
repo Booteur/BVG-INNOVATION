@@ -1,4 +1,4 @@
-import { Center, Flex, Text, Box } from "@chakra-ui/react";
+import { Center, Flex, Text, Box, useColorMode } from "@chakra-ui/react";
 import React, { FC } from "react";
 import CardComponent from "../../PlatformOverview/components/card";
 import { IDataComponent } from "../interface/stats";
@@ -9,12 +9,14 @@ export const DataMobile: FC<IDataComponent> = ({
   description,
   subValue,
 }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <Center>
       <CardComponent
         width={{ base: "180px", sm: "300px" }}
         size={"lg"}
-        bgColor={"#F9F9F9"}
+        bgColor={colorMode === "light" ? "#F9F9F9" : "primary.500"}
         showButton={false}
       >
         <Flex direction={"column"} align={"center"} justify={"center"}>
@@ -24,7 +26,6 @@ export const DataMobile: FC<IDataComponent> = ({
               sm: "6xl",
             }}
             fontWeight={"bold"}
-            color={"black"}
           >
             {value}
             <span style={{ color: valueColor, fontWeight: "bold" }}>
@@ -36,8 +37,7 @@ export const DataMobile: FC<IDataComponent> = ({
               base: "md",
               sm: "2xl",
             }}
-            color={"black"}
-            width={{ base: "160px", sm: "250px" }}
+            width={{ base: "180px", sm: "250px" }}
             textAlign={"center"}
           >
             {description}

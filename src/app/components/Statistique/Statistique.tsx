@@ -6,6 +6,7 @@ import {
   Grid,
   GridItem,
   SimpleGrid,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -20,12 +21,19 @@ export const Statistique = () => {
     sm: "tablet",
     md: "web",
   });
+  const { colorMode } = useColorMode();
 
   return (
     <Box p={5} width={"100%"}>
       {responsive === "web" ? (
         <>
-          <StatsDataTable valueColor={BVG_CUSTOM_COLORS.Primary} />
+          <StatsDataTable
+            valueColor={
+              colorMode === "light"
+                ? BVG_CUSTOM_COLORS.Primary
+                : BVG_CUSTOM_COLORS.Secondary
+            }
+          />
         </>
       ) : (
         <SimpleGrid spacing={4} columns={2}>
@@ -35,7 +43,11 @@ export const Statistique = () => {
                 value={value.value}
                 subValue={value.subValue}
                 description={value.description}
-                valueColor={BVG_CUSTOM_COLORS.Primary}
+                valueColor={
+                  colorMode === "light"
+                    ? BVG_CUSTOM_COLORS.Primary
+                    : BVG_CUSTOM_COLORS.Secondary
+                }
               />
             </GridItem>
           ))}

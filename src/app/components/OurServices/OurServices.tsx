@@ -54,7 +54,6 @@ const ServicesSection = () => {
                 fontWeight={"bold"}
                 fontSize={{ base: "md", sm: "2xl", lg: "3xl", md: "4xl" }}
                 textAlign={"center"}
-                color={"black"}
                 variants={boxVariants}
                 initial="hidden"
                 animate="visible"
@@ -72,7 +71,6 @@ const ServicesSection = () => {
                 fontWeight={"bold"}
                 fontSize={{ base: "md", sm: "xl", lg: "2xl", md: "3xl" }}
                 textAlign={"center"}
-                color={"black"}
                 variants={boxVariants}
                 initial="hidden"
                 animate="visible"
@@ -84,7 +82,7 @@ const ServicesSection = () => {
           </Flex>
         </Flex>
       </Box>
-      <Box p={3} width={"100%"}>
+      <Box width={"100%"}>
         <Flex
           p={3}
           alignItems={"center"}

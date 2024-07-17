@@ -6,14 +6,17 @@ import {
   ButtonGroup,
   Text,
   Box,
-  Image,
+  useColorMode,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { Links } from "../dummyLinks";
+import Image from "next/image";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export const WebNavBar = () => {
   const responsiveMode = useBreakpointValue({ base: "mobile", md: "web" });
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const MotionText = motion(Text);
   const MotionButton = motion(Button);
@@ -38,8 +41,8 @@ export const WebNavBar = () => {
         >
           <MotionImage
             alt="hero-image"
-            width={{ base: 30, sm: 35, md: 65 }}
-            height={{ base: 30, sm: 35, md: 65 }}
+            width={65}
+            height={65}
             src="/assets/logo/losange-icon.png"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -47,7 +50,6 @@ export const WebNavBar = () => {
           />
         </MotionBox>
         <MotionText
-          color="black"
           fontSize={{ base: "md", sm: "lg", md: "2xl" }}
           fontWeight="bold"
           initial={{ opacity: 0 }}
@@ -66,7 +68,6 @@ export const WebNavBar = () => {
         {Links?.map((link, index) => (
           <MotionText
             _hover={{ color: "secondary.200" }}
-            color="black"
             fontSize={{ base: "md", sm: "lg", md: "2xl" }}
             key={index}
             initial={{ opacity: 0, y: -50 }}
@@ -82,27 +83,44 @@ export const WebNavBar = () => {
       <Flex>
         <ButtonGroup spacing={2}>
           <MotionButton
-            colorScheme="primary"
             fontSize={{ base: "md", sm: "lg", md: "3xl" }}
             size={{ sm: "sm", md: "lg" }}
             height={{ sm: "40px", md: "56px" }}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
+            color={"white"}
+            bgColor={"primary.500"}
           >
             Contact us
           </MotionButton>
 
           <MotionButton
-            colorScheme="secondary"
             fontSize={{ base: "md", sm: "lg", md: "3xl" }}
             size={{ sm: "md", md: "lg" }}
             height={{ sm: "40px", md: "56px" }}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
+            bgColor={"secondary.500"}
+            color={"white"}
           >
             Book a schedule
+          </MotionButton>
+          <MotionButton
+            size={{ sm: "md", md: "lg" }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleColorMode}
+            bgColor={colorMode === "light" ? "white" : "black"}
+            _hover={{ backgroundColor: "transparent" }}
+            _active={{ backgroundColor: "transparent" }}
+          >
+            {colorMode === "light" ? (
+              <SunIcon color="black" />
+            ) : (
+              <MoonIcon color="white" />
+            )}
           </MotionButton>
         </ButtonGroup>
       </Flex>

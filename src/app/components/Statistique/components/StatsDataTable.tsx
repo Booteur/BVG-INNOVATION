@@ -1,13 +1,14 @@
-import { Text, Box, SimpleGrid, Center } from "@chakra-ui/react";
+import { Text, Box, SimpleGrid, Center, useColorMode } from "@chakra-ui/react";
 import React, { FC } from "react";
 import { DataComponentOverview } from "../dummyStats";
 import { IDataComponent } from "../interface/stats";
 
 export const StatsDataTable: FC<IDataComponent> = ({ valueColor }) => {
+  const { colorMode } = useColorMode();
   return (
     <Center>
       <Box
-        bgColor={"#F9F9F9"}
+        bgColor={colorMode === "light" ? "#F9F9F9" : "primary.500"}
         py={10}
         px={5}
         rounded="lg"

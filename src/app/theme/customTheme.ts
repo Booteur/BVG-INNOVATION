@@ -1,41 +1,41 @@
-import { Button, extendTheme } from "@chakra-ui/react";
-
-import breakpoints from "./beakpoints";
+// File path: /path/to/your/theme/customTheme.ts
+import { ThemeConfig, extendTheme } from "@chakra-ui/react";
+import breakpoints from "./breakpoints";
 import colors from "./colors";
-import { fontSizes, lineHeight } from "./fontSize";
+import { fontSizes, lineHeights } from "./fontSize";
 import { TextStyles } from "./TextStyle";
 import StyledTooltip from "./ToolTipStyle";
-import { MyCalenderIcon } from "../../../public/assets/svg";
+import { MyCalenderIcon } from "../../../assets/svg";
 
 export const theme = () => {
+  const config: ThemeConfig = {
+    initialColorMode: "system",
+    useSystemColorMode: true,
+  };
   return extendTheme({
+    config,
     colors,
     fonts: {
       body: "lato-regular",
     },
-    fontSizes: {
-      ...fontSizes,
-    },
-    lineHeights: {
-      ...lineHeight,
-    },
+    fontSizes,
+    lineHeights,
     breakpoints,
     styles: {
-      global: {
+      global: (props: any) => ({
         html: {
-          fontSize: "13px",
-          webkitUserSelect: "none",
+          fontSize: "16px",
+          WebkitUserSelect: "none",
           msUserSelect: "none",
           userSelect: "none",
         },
         body: {
-          backgroundColor: "#F9F9FA",
-          color: "black.500",
+          backgroundColor: props.colorMode === "light" ? "white" : "black",
+          color: props.colorMode === "light" ? "black" : "white",
         },
         _focus: {
           boxShadow: "none !important",
         },
-
         _dataFocus: {
           boxShadow: "none !important",
         },
@@ -63,13 +63,29 @@ export const theme = () => {
             opacity: "1 !important",
           },
         },
-      },
+      }),
     },
     components: {
+      Button: {
+        baseStyle: {
+          color: "lightgrey",
+        },
+        variants: {
+          solid: (props: any) => ({
+            bg: props.colorMode === "light" ? "primary.500" : "secondary.500",
+            _hover: {
+              bg: props.colorMode === "light" ? "primary.600" : "secondary.600",
+            },
+            _active: {
+              bg: props.colorMode === "light" ? "primary.700" : "secondary.500",
+            },
+          }),
+        },
+      },
       ...StyledTooltip,
       ...TextStyles,
     },
-
-    // add missing config here for fonts / spacing / etc...
   });
 };
+
+export default theme;

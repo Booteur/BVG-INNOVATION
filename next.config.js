@@ -4,7 +4,7 @@ const nextConfig = {
   output: "export",
   images: {
     // If you are using the Image component, you might need to configure this
-    // unoptimized: true,
+    unoptimized: true,
   },
   // Optionally, configure basePath and assetPrefix if your site is not hosted at the root of your domain
   // basePath: '',
@@ -17,4 +17,4 @@ module.exports = nextConfig;
 const nextConfig = {};
 
 export default nextConfig;
- */
+*/

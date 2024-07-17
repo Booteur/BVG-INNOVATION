@@ -3,19 +3,29 @@ import {
   Box,
   HStack,
   VStack,
-  Image,
   Text,
   Flex,
   Divider,
   Link,
+  useColorMode,
 } from "@chakra-ui/react";
 import React from "react";
 import { SocialLinks } from "./socialLinks";
 import CustomTooltip from "../CustomTooltip/CustomTooltip";
+import Image from "next/image";
 
 export const Footer = () => {
+  const { colorMode } = useColorMode();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <Box p={10} bgColor={"primary.500"}>
+    <Box
+      p={10}
+      bgColor={colorMode === "light" ? "primary.500" : "secondary.500"}
+    >
       <Flex
         direction={{ base: "column", sm: "row", md: "row" }}
         align={{ base: "center", md: "flex-start" }}
@@ -26,7 +36,6 @@ export const Footer = () => {
           bgColor={"white"}
           borderRadius={"20px"}
           width={{ base: "100%", sm: "400px", md: "350px" }}
-          height={{ base: "100%", sm: "200px" }}
         >
           <VStack align={"start"} justify={"start"} spacing={3} p={2}>
             <Flex align={"center"} justifyContent={"center"} gap={2}>
@@ -39,14 +48,14 @@ export const Footer = () => {
               >
                 <Image
                   alt="hero-image"
-                  width={{ base: 50, sm: 65 }}
-                  height={{ base: 50, sm: 65 }}
+                  width={65}
+                  height={65}
                   src="/assets/logo/losange-icon.png"
                 />
               </Box>
               <Text
                 color="black"
-                fontSize={{ base: "2xl", sm: "3xl" }}
+                fontSize={{ base: "xl", sm: "2xl" }}
                 fontWeight="extrabold"
               >
                 BVG - INNOVATION
@@ -54,9 +63,11 @@ export const Footer = () => {
             </Flex>
 
             <Flex gap={4} direction={"column"}>
-              <Text>1811 Silverside Rd, Wilmington, DE 19810, USA</Text>
-              <Text>US: +1 (001) 256-0034</Text>
-              <Text>email: contact@bvg-innovation.tech</Text>
+              <Text color="black">
+                1811 Silverside Rd, Wilmington, DE 19810, USA
+              </Text>
+              <Text color="black">US: +1 (001) 256-0034</Text>
+              <Text color="black">email: contact@bvg-innovation.tech</Text>
             </Flex>
           </VStack>
         </Box>
@@ -105,7 +116,6 @@ export const Footer = () => {
                   key={index}
                   href={links.link}
                   isExternal
-                  //_hover={{ color: "secondary.500" }}
                 >
                   {links.icon}
                 </Link>
@@ -124,15 +134,17 @@ export const Footer = () => {
             fontSize={"14px"}
             textAlign={{ base: "left", md: "left" }}
           >
-            Copyright © BVG-INNOVATION
+            Copyright © 2024 BVG-INNOVATION
           </Text>
           <Flex
-            bgColor={"white"}
+            bgColor={colorMode === "light" ? "white" : "primary.500"}
             w={"30px"}
             h={"30px"}
             borderRadius={"50px"}
             align={"center"}
             justify={"center"}
+            onClick={scrollToTop}
+            cursor="pointer"
           >
             <ArrowUpIcon />
           </Flex>

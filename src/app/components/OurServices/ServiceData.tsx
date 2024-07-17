@@ -12,6 +12,7 @@ const ServiceCard = ({ icon, title, description }: IService) => {
       bgColor={"#F9F9F9"}
       borderRadius="12px"
       width={{ base: "250px", sm: "300px", xl: "350px" }}
+      boxShadow={"lg"}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

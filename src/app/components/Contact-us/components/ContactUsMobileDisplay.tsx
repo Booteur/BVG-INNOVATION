@@ -46,7 +46,11 @@ export const ContactUsMobileDisplay = () => {
       >
         <FormControl id="name" mb={4} isRequired>
           <FormLabel>Nom Et Prénom</FormLabel>
-          <Input placeholder="john david" height={"47px"} />
+          <Input
+            placeholder="john david"
+            height={"47px"}
+            fontSize="16px" // Set the font size to 16px
+          />
         </FormControl>
         <FormControl id="email" mb={4} isRequired>
           <FormLabel>Votre Email</FormLabel>
@@ -54,15 +58,23 @@ export const ContactUsMobileDisplay = () => {
             type="email"
             placeholder="exemple@votremail.com"
             height={"47px"}
+            fontSize="16px" // Set the font size to 16px
           />
         </FormControl>
         <FormControl id="subject" mb={4} isRequired>
           <FormLabel>Objet</FormLabel>
-          <Input placeholder="comment pouvons nous aider" height={"47px"} />
+          <Input
+            placeholder="comment pouvons nous aider"
+            height={"47px"}
+            fontSize="16px" // Set the font size to 16px
+          />
         </FormControl>
         <FormControl id="message" isRequired mb={8}>
           <FormLabel>Message</FormLabel>
-          <Textarea placeholder="bonjour, je voudrais parler de la facon de..." />
+          <Textarea
+            placeholder="bonjour, je voudrais parler de la facon de..."
+            fontSize="16px" // Set the font size to 16px
+          />
         </FormControl>
         <Center>
           <Button
@@ -90,6 +102,7 @@ export const ContactCardMobile = ({ icon, title, info }: any) => {
         borderWidth={2}
         borderColor={"#E8E8E8"}
         width={"100%"}
+        boxShadow={"lg"}
         p={2}
       >
         <Box width={"100%"}>

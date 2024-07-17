@@ -37,6 +37,7 @@ const CardComponent: FC<ICardProps> = ({
       width={width}
       align={"center"}
       size={size}
+      boxShadow={"lg"}
     >
       <CardBody>{children}</CardBody>
       {showButton ? (

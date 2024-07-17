@@ -46,7 +46,6 @@ const ContactUs = () => {
           backgroundRepeat="no-repeat"
           backgroundPosition="right"
           backgroundSize="contain"
-          h={"80vh"}
         >
           <ContactUsMobileDisplay />
         </Flex>
@@ -69,6 +68,7 @@ export const ContactCard = ({ icon, title, info }: any) => {
           width={{ md: "40vw", lg: "30vw", "2xl": "20vw" }}
           gap={10}
           p={4}
+          boxShadow={"lg"}
         >
           <Flex align={"center"} justify={"center"} gap={2}>
             <Flex

@@ -42,7 +42,7 @@ export default function Home() {
       <PlatformOverview />
       <TeamWork />
       <BVGHistory />
-      <Box mt={"30px"} mb={"40px"}>
+      <Box mt={"50px"} mb={"50px"}>
         <ContactUs />
       </Box>
       <Footer />

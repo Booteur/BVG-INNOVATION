@@ -23,7 +23,7 @@ export const PlatformOverview = () => {
         justifyContent={{ base: "none", md: "space-around" }}
         flexDirection={{ base: "column", sm: "row", md: "row" }}
       >
-        <Box p={5}>
+        <Box>
           <VStack
             align={{ base: "center", sm: "start", md: "start" }}
             justifyContent={"center"}

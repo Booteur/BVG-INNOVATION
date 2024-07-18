@@ -26,8 +26,9 @@ export const DataMobile: FC<IDataComponent> = ({
               sm: "6xl",
             }}
             fontWeight={"bold"}
+            color={colorMode === "light" ? "black" : "white"}
           >
-            {value}
+            {value}{" "}
             <span style={{ color: valueColor, fontWeight: "bold" }}>
               {subValue}
             </span>
@@ -39,6 +40,7 @@ export const DataMobile: FC<IDataComponent> = ({
             }}
             width={{ base: "180px", sm: "250px" }}
             textAlign={"center"}
+            color={colorMode === "light" ? "black" : "white"}
           >
             {description}
           </Text>

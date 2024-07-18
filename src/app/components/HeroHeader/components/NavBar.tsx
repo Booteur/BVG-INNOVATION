@@ -50,7 +50,7 @@ export const NavBar = () => {
       width="100%"
       zIndex="10000"
       transition="background-color 0.3s"
-      bg={isScrolled ? "primary.500" : "white"}
+      bg={isScrolled ? "primary.500" : "none"}
     >
       <Flex align={"center"} justifyContent={"space-between"} p={4}>
         <Flex align={"center"} gap={2}>
@@ -74,12 +74,12 @@ export const NavBar = () => {
             />
           </MotionBox>
           <MotionText
-            color={isScrolled ? "white" : "black"}
             fontSize={{ base: "2xl", sm: "4xl" }}
             fontWeight="bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
+            color={isScrolled ? "white" : "none"}
           >
             BVG - INNOVATION
           </MotionText>

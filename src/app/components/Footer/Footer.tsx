@@ -1,4 +1,3 @@
-import { ArrowUpIcon } from "@chakra-ui/icons";
 import {
   Box,
   HStack,
@@ -16,10 +15,6 @@ import Image from "next/image";
 
 export const Footer = () => {
   const { colorMode } = useColorMode();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <Box
@@ -112,11 +107,7 @@ export const Footer = () => {
                 label={links.title}
                 key={index}
               >
-                <Link
-                  key={index}
-                  href={links.link}
-                  isExternal
-                >
+                <Link key={index} href={links.link} isExternal>
                   {links.icon}
                 </Link>
               </CustomTooltip>
@@ -124,30 +115,18 @@ export const Footer = () => {
           </Flex>
         </Flex>
         <HStack
-          width={{ base: "100%", md: "40%" }}
+          width={{ base: "100%", md: "50%" }}
           align={"center"}
           spacing={20}
-          justify={"space-between"}
+          justify={"center"}
         >
           <Text
             color={"white"}
             fontSize={"14px"}
-            textAlign={{ base: "left", md: "left" }}
+            textAlign={{ base: "left", md: "center" }}
           >
             Copyright © 2024 BVG-INNOVATION
           </Text>
-          <Flex
-            bgColor={colorMode === "light" ? "white" : "primary.500"}
-            w={"30px"}
-            h={"30px"}
-            borderRadius={"50px"}
-            align={"center"}
-            justify={"center"}
-            onClick={scrollToTop}
-            cursor="pointer"
-          >
-            <ArrowUpIcon />
-          </Flex>
         </HStack>
       </Flex>
     </Box>

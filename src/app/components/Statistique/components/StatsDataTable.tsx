@@ -21,9 +21,9 @@ export const StatsDataTable: FC<IDataComponent> = ({ valueColor }) => {
             <Box key={index}>
               <Text
                 fontSize={{
-                  md: "4xl",
-                  lg: "5xl",
-                  "2xl": "6xl",
+                  md: "xl",
+                  lg: "2xl",
+                  "2xl": "3xl",
                 }}
                 fontWeight={"bold"}
               >
@@ -34,10 +34,9 @@ export const StatsDataTable: FC<IDataComponent> = ({ valueColor }) => {
               </Text>
               <Text
                 fontSize={{
-                  md: "xl",
-                  lg: "2xl",
-                  xl: "3xl",
-                  "2xl": "4xl",
+                  lg: "xl",
+                  xl: "2xl",
+                  "2xl": "3xl",
                 }}
               >
                 {stats.description}

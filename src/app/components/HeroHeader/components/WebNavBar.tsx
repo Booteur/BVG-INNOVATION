@@ -1,34 +1,65 @@
 import {
   useBreakpointValue,
   Button,
-  Heading,
   Flex,
   ButtonGroup,
   Text,
   Box,
   useColorMode,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import React from "react";
+import { motion, useScroll } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { Links } from "../dummyLinks";
 import Image from "next/image";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export const WebNavBar = () => {
-  const responsiveMode = useBreakpointValue({ base: "mobile", md: "web" });
   const { colorMode, toggleColorMode } = useColorMode();
 
   const MotionText = motion(Text);
   const MotionButton = motion(Button);
-  const MotionHeading = motion(Heading);
   const MotionImage = motion(Image);
   const MotionBox = motion(Box);
   const buttonVariants = {
     hover: { scale: 1.1 },
     tap: { scale: 0.9 },
   };
+
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [animationsPlayed, setAnimationsPlayed] = useState(false);
+  const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!animationsPlayed && scrollYProgress.get() > 0.1) {
+      setAnimationsPlayed(true);
+    }
+  }, [scrollYProgress, animationsPlayed]);
+
   return (
-    <Flex align={"center"} justify={"space-between"} p={4}>
+    <Flex
+      align={"center"}
+      justify={"space-between"}
+      p={4}
+      bg={isScrolled ? "primary.500" : "none"}
+      position="fixed"
+      width="100%"
+      zIndex="10000"
+    >
       <Flex align={"center"} justifyContent={"center"} gap={2}>
         <MotionBox
           width={{ base: "30px", sm: "35px", md: "65px" }}
@@ -55,6 +86,7 @@ export const WebNavBar = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+          color={colorMode === "light" && !isScrolled ? "black" : "white"}
         >
           BVG - INNOVATION
         </MotionText>
@@ -74,6 +106,7 @@ export const WebNavBar = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 * index }}
             whileHover={{ scale: 1.1 }}
+            color={colorMode === "light" && !isScrolled ? "black" : "white"}
           >
             {link.title}
           </MotionText>
@@ -91,6 +124,7 @@ export const WebNavBar = () => {
             whileTap="tap"
             color={"white"}
             bgColor={"primary.500"}
+            _hover={{ backgroundColor: "primary.500" }}
           >
             Contact us
           </MotionButton>
@@ -104,6 +138,7 @@ export const WebNavBar = () => {
             whileTap="tap"
             bgColor={"secondary.500"}
             color={"white"}
+            _hover={{ backgroundColor: "secondary.500" }}
           >
             Book a schedule
           </MotionButton>
@@ -112,7 +147,7 @@ export const WebNavBar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleColorMode}
-            bgColor={colorMode === "light" ? "white" : "black"}
+            bgColor={"transparent"}
             _hover={{ backgroundColor: "transparent" }}
             _active={{ backgroundColor: "transparent" }}
           >

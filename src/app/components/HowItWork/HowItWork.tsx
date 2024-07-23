@@ -54,18 +54,17 @@ const HowItWork = () => {
         alignItems={"center"}
         justifyContent={"center"}
         direction={"column"}
-        p={3}
       >
         <Flex
           color={"primary.500"}
           bgColor={"#EFECFF"}
-          w={"170px"}
+          w={"195px"}
           h={"60px"}
           alignItems={"center"}
           justifyContent={"center"}
           borderRadius={"20px"}
         >
-          <Text fontSize={"xl"}>Comment ça marche</Text>
+          <Text fontSize={"18px"}>Comment ça marche</Text>
         </Flex>
         <Box
           mt={"20px"}
@@ -75,7 +74,7 @@ const HowItWork = () => {
         >
           <MotionText
             fontWeight={"bold"}
-            fontSize={{ base: "xl", sm: "2xl", lg: "4xl", md: "5xl" }}
+            fontSize={{ base: "16px", md: "30px" }}
             textAlign={"center"}
             variants={boxVariants}
           >

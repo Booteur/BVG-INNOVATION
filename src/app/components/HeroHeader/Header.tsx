@@ -40,7 +40,7 @@ export const Header = () => {
                 fontSize={"6xl"}
                 initial={{ x: -100 }}
                 animate={{ x: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, repeat: 0 }}
               >
                 Offer The Best{" "}
                 <Text as="span" color="primary.500">
@@ -82,7 +82,7 @@ export const Header = () => {
                 height={1000}
                 src={
                   colorMode === "light"
-                    ? "/assets/banner/bvg-shadow.png"
+                    ? "/assets/images/bvg-cart/light-shadow/cart-light-shadow.png"
                     : "/assets/images/bvg-cart/bvg-shadow-cart.png"
                 }
               />
@@ -147,7 +147,7 @@ export const Header = () => {
                 height={500}
                 src={
                   colorMode === "light"
-                    ? "/assets/banner/bvg-shadow.png"
+                    ? "/assets/images/bvg-cart/light-shadow/cart-light-shadow.png"
                     : "/assets/images/bvg-cart/bvg-shadow-cart.png"
                 }
               />

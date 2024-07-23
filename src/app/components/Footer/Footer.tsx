@@ -101,7 +101,7 @@ export const Footer = () => {
         >
           <Flex gap={5}>
             <Text color={"white"}>Follow Us : </Text>
-            {SocialLinks?.map((links, index) => (
+            {SocialLinks?.slice(0, 2)?.map((links, index) => (
               <CustomTooltip
                 placement={"bottom-start"}
                 label={links.title}

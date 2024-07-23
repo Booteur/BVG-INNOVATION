@@ -75,17 +75,17 @@ export const ContactCard = ({
           borderRadius={"30px"}
           borderWidth={2}
           borderColor={"#E8E8E8"}
-          width={{ md: "40vw", lg: "30vw", "2xl": "20vw" }}
+          width={{ md: "70vw", lg: "30vw", "2xl": "20vw" }}
           gap={10}
           p={4}
           boxShadow={"lg"}
         >
           <Flex align={"center"} justify={"center"} gap={2}>
             <Flex
-              width={"73px"}
-              height={"73px"}
+              width={"55px"}
+              height={"55px"}
               bgColor={colorMode === "light" ? "primary.500" : "secondary.500"}
-              borderRadius={"20px"}
+              borderRadius={"12px"}
               alignItems={"center"}
               justifyContent={"center"}
             >
@@ -93,7 +93,7 @@ export const ContactCard = ({
             </Flex>
             <Text color={"black"}>{title}</Text>
           </Flex>
-          <Text fontSize={"22px"} color={"gray.500"}>
+          <Text fontSize={"15 px"} color={"gray.500"}>
             {info}
           </Text>
         </Flex>

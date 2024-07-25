@@ -46,7 +46,7 @@ const HowItWork = () => {
       initial="hidden"
       animate={controls}
       variants={boxVariants}
-      mt={"50px"}
+      //mt={"50px"}
       mb={"50px"}
       p={4}
     >
@@ -74,7 +74,7 @@ const HowItWork = () => {
         >
           <MotionText
             fontWeight={"bold"}
-            fontSize={{ base: "16px", md: "30px" }}
+            fontSize={{ base: "18px", md: "30px" }}
             textAlign={"center"}
             variants={boxVariants}
           >
@@ -96,13 +96,13 @@ const HowItWork = () => {
           p={3}
         >
           <HStack spacing={8} flexDirection={{ base: "column", md: "row" }}>
-            <MotionBox width={{ base: "100%", md: "400px" }}>
+            <MotionBox width={{ base: "100%", md: "700px" }}>
               <HStack spacing={5}>
                 <Flex
                   bgColor={"primary.500"}
-                  width={{ base: "45px", md: "60px" }}
-                  height={{ base: "35px", md: "60px" }}
-                  borderRadius={"20px"}
+                  width={{ base: "40px", md: "50px" }}
+                  height={{ base: "40px", md: "50px" }}
+                  borderRadius={"12px"}
                   alignItems={"center"}
                   justifyContent={"center"}
                 >
@@ -112,10 +112,10 @@ const HowItWork = () => {
                     fill={"secondary.500"}
                   />
                 </Flex>
-                <Box width={{ base: "auto", md: "200px" }}>
+                <Box>
                   <MotionText
                     fontWeight={"bold"}
-                    fontSize={"2xl"}
+                    fontSize={{ base: "18px", md: "22px" }}
                     variants={boxVariants}
                   >
                     Nous rendons vos idées réelles
@@ -123,7 +123,7 @@ const HowItWork = () => {
                 </Box>
               </HStack>
               <MotionBox mt={"15px"} variants={boxVariants}>
-                <Text fontSize={"xs-large"} textAlign={"justify"}>
+                <Text fontSize={"16px"} textAlign={"justify"}>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
                   impedit, labore consectetur, magnam corrupti ipsam aliquid
                   nulla omnis vitae eos officia accusantium aperiam illum? Ut
@@ -133,7 +133,7 @@ const HowItWork = () => {
               <MotionButton
                 mt={"20px"}
                 color={"white"}
-                borderRadius={"12px"}
+                borderRadius={"7px"}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 variants={boxVariants}

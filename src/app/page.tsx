@@ -23,7 +23,11 @@ import { WebNavBar } from "./components/HeroHeader/components/WebNavBar";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [showScroll, setShowScroll] = useState(false);
-  const responsiveMode = useBreakpointValue({ base: "mobile", md: "web" });
+  const responsiveMode = useBreakpointValue({
+    base: "mobile",
+    sm: "tablet",
+    md: "web",
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {

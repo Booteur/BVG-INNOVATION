@@ -19,28 +19,13 @@ export const StatsDataTable: FC<IDataComponent> = ({ valueColor }) => {
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
           {DataComponentOverview.map((stats, index) => (
             <Box key={index}>
-              <Text
-                fontSize={{
-                  md: "xl",
-                  lg: "2xl",
-                  "2xl": "3xl",
-                }}
-                fontWeight={"bold"}
-              >
+              <Text fontSize={"32px"} fontWeight={"bold"}>
                 {stats.value}
                 <span style={{ color: valueColor, fontWeight: "bold" }}>
                   {stats.subValue}
                 </span>
               </Text>
-              <Text
-                fontSize={{
-                  lg: "xl",
-                  xl: "2xl",
-                  "2xl": "3xl",
-                }}
-              >
-                {stats.description}
-              </Text>
+              <Text fontSize={"22px"}>{stats.description}</Text>
             </Box>
           ))}
         </SimpleGrid>

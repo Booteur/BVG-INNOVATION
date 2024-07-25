@@ -32,7 +32,10 @@ export const TeamWork = () => {
             justifyContent={"center"}
             borderRadius={"20px"}
           >
-            <Text fontSize={{ base: "xl", md: "2xl" }} color={"secondary.500"}>
+            <Text
+              fontSize={{ base: "18px", md: "22px" }}
+              color={"secondary.500"}
+            >
               Blog
             </Text>
           </Flex>
@@ -42,46 +45,36 @@ export const TeamWork = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Text fontSize={{ base: "xl", md: "4xl" }}>
+          <Text fontSize={{ base: "18px", md: "32px" }}>
             The perfect <span style={{ fontWeight: "bold" }}>Creativity</span>
           </Text>
         </motion.div>
       </VStack>
-      <Box p={3}>
-        <Center flexDirection={"column"}>
+      <Center p={3}>
+        <Box flexDirection={"column"}>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Box>
-              <Image
-                alt="test"
-                src={"/assets/images/teamWork.png"}
-                borderRadius={{ base: "20px", md: "50px" }}
-                width={{ base: "100%", md: "auto" }}
-              />
-            </Box>
+            <Image
+              alt="test"
+              src={"/assets/images/teamWork.png"}
+              borderRadius={{ base: "20px", md: "50px" }}
+            />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Box
-              mt={20}
-              width={{
-                base: "100vw",
-                sm: "70vw",
-                md: "70vw",
-                lg: "50vw",
-                "2xl": "35vw",
-              }}
-            >
+            <Center mt={20}>
               <VStack spacing={5} align={"start"}>
-                <Heading pl={8}>The Perfect Creativity</Heading>
-                <VStack p={8} spacing={10} align={"flex-start"}>
-                  <Stack width={{ base: "100%", md: "700px" }} spacing={10}>
+                <Text fontWeight={"bold"} fontSize={"28px"}>
+                  The Perfect Creativity
+                </Text>
+                <VStack spacing={10} align={"flex-start"}>
+                  <Stack width={{ base: "100%", md: "700px" }} spacing={5}>
                     <Text
                       fontSize={{ base: "16px", sm: "18px", md: "20px" }}
                       textAlign={{ base: "justify", md: "left" }}
@@ -130,7 +123,9 @@ export const TeamWork = () => {
                     </OrderedList>
                   </Stack>
                   <Stack width={{ base: "100%", md: "700px" }} spacing={5}>
-                    <Heading>Business Analysis</Heading>
+                    <Text fontWeight={"bold"} fontSize={"28px"}>
+                      Business Analysis
+                    </Text>
                     <Text
                       fontSize={{ base: "16px", sm: "15px", md: "20px" }}
                       textAlign={{ base: "justify", md: "left" }}
@@ -143,7 +138,9 @@ export const TeamWork = () => {
                     </Text>
                   </Stack>
                   <Stack width={{ base: "100%", md: "700px" }} spacing={5}>
-                    <Heading>Take Care of Clients</Heading>
+                    <Text fontWeight={"bold"} fontSize={"28px"}>
+                      Take Care of Clients
+                    </Text>
                     <Text
                       fontSize={{ base: "16px", sm: "18px", md: "20px" }}
                       textAlign={{ base: "justify", md: "left" }}
@@ -205,7 +202,7 @@ export const TeamWork = () => {
                       >
                         <WorkIcon width={20} h={20} />
                         <Text
-                          fontSize={{ base: "13px", sm: "18px", md: "20px" }}
+                          fontSize={{ base: "16px", sm: "18px", md: "20px" }}
                           color={"white"}
                           textAlign={"center"}
                         >
@@ -218,7 +215,9 @@ export const TeamWork = () => {
                     </Flex>
                   </motion.div>
                   <Stack width={{ base: "100%", md: "700px" }} spacing={5}>
-                    <Heading>Strategy and Planning</Heading>
+                    <Text fontWeight={"bold"} fontSize={"28px"}>
+                      Strategy and Planning
+                    </Text>
                     <Text
                       fontSize={{ base: "16px", sm: "18px", md: "20px" }}
                       textAlign={{ base: "justify", md: "left" }}
@@ -232,10 +231,10 @@ export const TeamWork = () => {
                   </Stack>
                 </VStack>
               </VStack>
-            </Box>
+            </Center>
           </motion.div>
-        </Center>
-      </Box>
+        </Box>
+      </Center>
     </Box>
   );
 };

@@ -17,12 +17,7 @@ import { ContactCard } from "../ContactUs";
 export const ContactUsWebDisplay = () => {
   return (
     <Flex flexDirection="column" alignItems="center">
-      <HStack
-        spacing={20}
-        align={"center"}
-        justify={"center"}
-        width={{ md: "95vw", lg: "30vw", "2xl": "20vw" }}
-      >
+      <HStack spacing={20} align={"center"} justify={"center"}>
         <ContactCard
           icon={<MailIcon width={"24px"} height={"24px"} fill={"white"} />}
           title="Mail Us"

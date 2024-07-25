@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import { Links } from "../dummyLinks";
 import Image from "next/image";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { NavBar } from " _/app/components/HeroHeader/components/NavBar";
 
 export const WebNavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -50,6 +51,12 @@ export const WebNavBar = () => {
     }
   }, [scrollYProgress, animationsPlayed]);
 
+  const responsiveMode = useBreakpointValue({
+    base: "mobile",
+    sm: "tablet",
+    md: "web",
+  });
+
   return (
     <Flex
       align={"center"}
@@ -60,10 +67,15 @@ export const WebNavBar = () => {
       width="100%"
       zIndex="10000"
     >
-      <Flex align={"center"} justifyContent={"center"} gap={2}>
+      <Flex
+        align={"center"}
+        justifyContent={"flex-start"}
+        gap={2}
+        width={{ md: "30vw", lg: "22vw" }}
+      >
         <MotionBox
-          width={{ base: "30px", sm: "35px", md: "65px" }}
-          height={{ base: "30px", sm: "35px", md: "65px" }}
+          width={{ md: "45px", lg: "65px" }}
+          height={{ md: "45px", lg: "65px" }}
           borderRadius="9px"
           bgColor="#F5F5F5"
           initial={{ opacity: 0 }}
@@ -81,7 +93,7 @@ export const WebNavBar = () => {
           />
         </MotionBox>
         <MotionText
-          fontSize={{ base: "md", sm: "lg", md: "2xl" }}
+          fontSize={{ md: "14px", lg: "18px" }}
           fontWeight="bold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -92,7 +104,7 @@ export const WebNavBar = () => {
         </MotionText>
       </Flex>
       <Flex
-        w={{ sm: "20vw", md: "40vw" }}
+        w={{ md: "45vw", lg: "40vw" }}
         align={"center"}
         justify={"space-between"}
         p={4}
@@ -100,7 +112,6 @@ export const WebNavBar = () => {
         {Links?.map((link, index) => (
           <MotionText
             _hover={{ color: "secondary.200" }}
-            fontSize={{ base: "md", sm: "lg", md: "2xl" }}
             key={index}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,12 +124,9 @@ export const WebNavBar = () => {
         ))}
       </Flex>
 
-      <Flex>
+      <Flex align={"flex-end"}>
         <ButtonGroup spacing={2}>
           <MotionButton
-            fontSize={{ base: "md", sm: "lg", md: "3xl" }}
-            size={{ sm: "sm", md: "lg" }}
-            height={{ sm: "40px", md: "56px" }}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -130,9 +138,6 @@ export const WebNavBar = () => {
           </MotionButton>
 
           <MotionButton
-            fontSize={{ base: "md", sm: "lg", md: "3xl" }}
-            size={{ sm: "md", md: "lg" }}
-            height={{ sm: "40px", md: "56px" }}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -143,7 +148,6 @@ export const WebNavBar = () => {
             Book a schedule
           </MotionButton>
           <MotionButton
-            size={{ sm: "md", md: "lg" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleColorMode}

@@ -14,7 +14,7 @@ export const DataMobile: FC<IDataComponent> = ({
   return (
     <Center>
       <CardComponent
-        width={{ base: "180px", sm: "300px" }}
+        width={"auto"}
         size={"lg"}
         bgColor={colorMode === "light" ? "#F9F9F9" : "primary.500"}
         showButton={false}
@@ -22,8 +22,8 @@ export const DataMobile: FC<IDataComponent> = ({
         <Flex direction={"column"} align={"center"} justify={"center"}>
           <Text
             fontSize={{
-              base: "3xl",
-              sm: "6xl",
+              base: "22px",
+              sm: "32px",
             }}
             fontWeight={"bold"}
             color={colorMode === "light" ? "black" : "white"}
@@ -35,8 +35,8 @@ export const DataMobile: FC<IDataComponent> = ({
           </Text>
           <Text
             fontSize={{
-              base: "md",
-              sm: "2xl",
+              base: "18px",
+              sm: "22px",
             }}
             width={{ base: "180px", sm: "250px" }}
             textAlign={"center"}

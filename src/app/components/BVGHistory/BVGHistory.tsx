@@ -6,12 +6,10 @@ import { OurValues } from "../OurValues/OurValues";
 
 export const BVGHistory = () => {
   return (
-    <Box>
-      <Stack spacing={10}>
-        <Statistique />
-        <OurMission />
-        <OurValues />
-      </Stack>
-    </Box>
+    <Stack spacing={10}>
+      <Statistique />
+      <OurMission />
+      <OurValues />
+    </Stack>
   );
 };

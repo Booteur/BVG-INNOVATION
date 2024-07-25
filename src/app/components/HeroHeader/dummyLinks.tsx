@@ -1,16 +1,17 @@
 import { ILinks } from "./interface/Links";
+import { fr } from "../../utils/languages";
 
 export const Links: ILinks[] = [
   {
-    title: "Acceuil",
+    title: fr.HEADER.LINKS.HOME,
   },
   {
-    title: "Nos Services",
+    title: fr.HEADER.LINKS.SERVICE,
   },
   {
-    title: "FAQ",
+    title: fr.HEADER.LINKS.BLOG,
   },
   {
-    title: "A propos",
+    title: fr.HEADER.LINKS.ABOUT,
   },
 ];

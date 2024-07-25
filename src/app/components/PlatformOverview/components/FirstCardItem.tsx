@@ -18,21 +18,18 @@ export const FirstCardItem = ({ icon, title, description }: IPlatform) => {
       justify={"space-between"}
       borderRadius={"10px"}
       width={{ base: "100%", md: "400px" }}
+      height={{ base: "100%", md: "270px" }}
       boxShadow={"lg"}
     >
-      <Box p={5}>
-        <Flex>
-          <VStack spacing={6} align={"start"}>
-            <Image alt="test-button" src={icon} width={150} height={150} />
-            <Heading color={"black"} fontSize={{ base: "xl", md: "2xl" }}>
-              {title}
-            </Heading>
-            <Text color={"black"} fontSize={{ base: "md", md: "xl" }}>
-              {description}
-            </Text>
-          </VStack>
-        </Flex>
-      </Box>
+      <VStack spacing={6} align={"start"} p={5}>
+        <Image alt="test-button" src={icon} width={150} height={150} />
+        <Heading color={"black"} fontSize={{ base: "16px", md: "18px" }}>
+          {title}
+        </Heading>
+        <Text color={"black"} fontSize={{ base: "16px", md: "18px" }}>
+          {description}
+        </Text>
+      </VStack>
     </Flex>
   );
 };

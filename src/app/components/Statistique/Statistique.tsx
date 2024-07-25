@@ -26,7 +26,7 @@ export const Statistique = () => {
   return (
     <Box p={5} width={"100%"}>
       {responsive === "web" ? (
-        <>
+        <Box width={"100%"}>
           <StatsDataTable
             valueColor={
               colorMode === "light"
@@ -34,7 +34,7 @@ export const Statistique = () => {
                 : BVG_CUSTOM_COLORS.Secondary
             }
           />
-        </>
+        </Box>
       ) : (
         <SimpleGrid spacing={4} columns={2}>
           {DataComponentOverview?.map((value, index) => (

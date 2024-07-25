@@ -7,11 +7,13 @@ import {
   Divider,
   Link,
   useColorMode,
+  Stack,
 } from "@chakra-ui/react";
 import React from "react";
 import { SocialLinks } from "./socialLinks";
 import CustomTooltip from "../CustomTooltip/CustomTooltip";
 import Image from "next/image";
+import { Links } from " _/app/components/HeroHeader/dummyLinks";
 
 export const Footer = () => {
   const { colorMode } = useColorMode();
@@ -66,25 +68,27 @@ export const Footer = () => {
             </Flex>
           </VStack>
         </Box>
-        <VStack>
-          <Flex
-            flexDirection={{ base: "row", sm: "column", md: "column" }}
-            gap={{ base: 10, sm: 10, md: 10 }}
-          >
-            <Text color={"white"}>Acceuil</Text>
-            <Text color={"white"}>Nos Services</Text>
-            <Text color={"white"}>A propos</Text>
-            <Text color={"white"}>Contact-us</Text>
-          </Flex>
-        </VStack>
+        <HStack
+          align={"start"}
+          spacing={{ base: 5, md: 10 }}
+          flexDirection={{ sm: "column", md: "column" }}
+        >
+          {Links?.map((link, index) => (
+            <Text
+              _hover={{ color: "secondary.200" }}
+              fontSize={"18px"}
+              key={index}
+              color={"white"}
+            >
+              {link.title}
+            </Text>
+          ))}
+        </HStack>
       </Flex>
 
-      <Box
-        mt={"20px"}
-        width={{ base: "100%", md: "85%", lg: "60%", "2xl": "35%" }}
-      >
+      <Box mt={"20px"}>
         <Flex align={"flex-start"} justify={{ base: "center", md: "flex-end" }}>
-          <Divider width={{ base: "100%", md: "420px" }} />
+          <Divider width={{ base: "100%", md: "100%" }} />
         </Flex>
       </Box>
       <Flex
@@ -101,7 +105,7 @@ export const Footer = () => {
         >
           <Flex gap={5}>
             <Text color={"white"}>Follow Us : </Text>
-            {SocialLinks?.map((links, index) => (
+            {SocialLinks?.slice(0, 2)?.map((links, index) => (
               <CustomTooltip
                 placement={"bottom-start"}
                 label={links.title}
@@ -114,20 +118,11 @@ export const Footer = () => {
             ))}
           </Flex>
         </Flex>
-        <HStack
-          width={{ base: "100%", md: "50%" }}
-          align={"center"}
-          spacing={20}
-          justify={"center"}
-        >
-          <Text
-            color={"white"}
-            fontSize={"14px"}
-            textAlign={{ base: "left", md: "center" }}
-          >
+        <Box width={{ base: "100%", md: "50%" }}>
+          <Text color={"white"} fontSize={"16px"}>
             Copyright © 2024 BVG-INNOVATION
           </Text>
-        </HStack>
+        </Box>
       </Flex>
     </Box>
   );

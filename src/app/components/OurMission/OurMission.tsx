@@ -18,14 +18,16 @@ export const OurMission = () => {
         direction={useBreakpointValue({ base: "column", md: "row" })}
         spacing={useBreakpointValue({ base: 10, md: 20 })}
       >
-        <VStack p={4} align={"start"} spacing={10}>
-          <Heading fontSize={useBreakpointValue({ base: "30px", md: "40px" })}>
+        <VStack
+          p={4}
+          align={"start"}
+          spacing={10}
+          width={useBreakpointValue({ base: "100%", md: "500px" })}
+        >
+          <Text fontSize={useBreakpointValue({ base: "30px", md: "40px" })}>
             Notre Mission
-          </Heading>
-          <Stack
-            spacing={8}
-            width={useBreakpointValue({ base: "100%", md: "400px" })}
-          >
+          </Text>
+          <Stack spacing={4}>
             <Text fontSize={useBreakpointValue({ base: "18px", md: "20px" })}>
               Découvrez de nouvelles perspectives avec nous ! Nous sommes
               centrés sur lutilisateur et axés sur la croissance
@@ -41,8 +43,8 @@ export const OurMission = () => {
           <Image
             alt="mission"
             src="/assets/images/missions/mission.png"
-            width={700}
-            height={700}
+            width={500}
+            height={500}
           />
         </Box>
       </Stack>

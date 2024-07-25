@@ -35,25 +35,23 @@ export const CardItem = ({
       align={"center"}
       justify={"center"}
       borderRadius={"10px"}
-      p={4}
+      p={5}
       boxShadow={"lg"}
     >
-      <Box p={5}>
-        <Flex>
-          <VStack spacing={{ base: 2, sm: 4, md: 6 }} align={"start"}>
-            <Image alt="test-button" src={icon} width={150} height={150} />
-            <Heading
-              color={"black"}
-              fontSize={{ base: "xl", sm: "2xl", md: "2xl" }}
-            >
-              {title}
-            </Heading>
-            <Text color={"black"} fontSize={{ base: "md", md: "xl" }}>
-              {description}
-            </Text>
-          </VStack>
-        </Flex>
-      </Box>
+      <VStack
+        spacing={6}
+        align={"start"}
+        width={{ base: "auto", md: "300px", xl: "500px" }}
+      >
+        <Image alt="test-button" src={icon} width={150} height={150} />
+        <Heading color={"black"} fontSize={"22px"}>
+          {title}
+        </Heading>
+        <Text color={"black"} fontSize={{ base: "16px", md: "18px" }}>
+          {description}
+        </Text>
+      </VStack>
+
       {(image && responsive === "web") || responsive === "tablet" ? (
         <Box bgColor={bgColor ?? "none"} me={6}>
           <Image alt="hero-image" src={image ?? ""} width={300} height={300} />

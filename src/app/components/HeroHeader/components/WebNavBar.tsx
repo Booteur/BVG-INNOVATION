@@ -1,38 +1,81 @@
 import {
   useBreakpointValue,
   Button,
-  Heading,
   Flex,
   ButtonGroup,
   Text,
   Box,
   useColorMode,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import React from "react";
+import { motion, useScroll } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { Links } from "../dummyLinks";
 import Image from "next/image";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { NavBar } from " _/app/components/HeroHeader/components/NavBar";
 
 export const WebNavBar = () => {
-  const responsiveMode = useBreakpointValue({ base: "mobile", md: "web" });
   const { colorMode, toggleColorMode } = useColorMode();
 
   const MotionText = motion(Text);
   const MotionButton = motion(Button);
-  const MotionHeading = motion(Heading);
   const MotionImage = motion(Image);
   const MotionBox = motion(Box);
   const buttonVariants = {
     hover: { scale: 1.1 },
     tap: { scale: 0.9 },
   };
+
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [animationsPlayed, setAnimationsPlayed] = useState(false);
+  const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!animationsPlayed && scrollYProgress.get() > 0.1) {
+      setAnimationsPlayed(true);
+    }
+  }, [scrollYProgress, animationsPlayed]);
+
+  const responsiveMode = useBreakpointValue({
+    base: "mobile",
+    sm: "tablet",
+    md: "web",
+  });
+
   return (
-    <Flex align={"center"} justify={"space-between"} p={4}>
-      <Flex align={"center"} justifyContent={"center"} gap={2}>
+    <Flex
+      align={"center"}
+      justify={"space-between"}
+      p={4}
+      bg={isScrolled ? "primary.500" : "none"}
+      position="fixed"
+      width="100%"
+      zIndex="10000"
+    >
+      <Flex
+        align={"center"}
+        justifyContent={"flex-start"}
+        gap={2}
+        width={{ md: "30vw", lg: "22vw" }}
+      >
         <MotionBox
-          width={{ base: "30px", sm: "35px", md: "65px" }}
-          height={{ base: "30px", sm: "35px", md: "65px" }}
+          width={{ md: "45px", lg: "65px" }}
+          height={{ md: "45px", lg: "65px" }}
           borderRadius="9px"
           bgColor="#F5F5F5"
           initial={{ opacity: 0 }}
@@ -50,17 +93,18 @@ export const WebNavBar = () => {
           />
         </MotionBox>
         <MotionText
-          fontSize={{ base: "md", sm: "lg", md: "2xl" }}
+          fontSize={{ md: "14px", lg: "18px" }}
           fontWeight="bold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
+          color={colorMode === "light" && !isScrolled ? "black" : "white"}
         >
           BVG - INNOVATION
         </MotionText>
       </Flex>
       <Flex
-        w={{ sm: "20vw", md: "40vw" }}
+        w={{ md: "45vw", lg: "40vw" }}
         align={"center"}
         justify={"space-between"}
         p={4}
@@ -68,51 +112,46 @@ export const WebNavBar = () => {
         {Links?.map((link, index) => (
           <MotionText
             _hover={{ color: "secondary.200" }}
-            fontSize={{ base: "md", sm: "lg", md: "2xl" }}
             key={index}
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 * index }}
             whileHover={{ scale: 1.1 }}
+            color={colorMode === "light" && !isScrolled ? "black" : "white"}
           >
             {link.title}
           </MotionText>
         ))}
       </Flex>
 
-      <Flex>
+      <Flex align={"flex-end"}>
         <ButtonGroup spacing={2}>
           <MotionButton
-            fontSize={{ base: "md", sm: "lg", md: "3xl" }}
-            size={{ sm: "sm", md: "lg" }}
-            height={{ sm: "40px", md: "56px" }}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
             color={"white"}
             bgColor={"primary.500"}
+            _hover={{ backgroundColor: "primary.500" }}
           >
             Contact us
           </MotionButton>
 
           <MotionButton
-            fontSize={{ base: "md", sm: "lg", md: "3xl" }}
-            size={{ sm: "md", md: "lg" }}
-            height={{ sm: "40px", md: "56px" }}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
             bgColor={"secondary.500"}
             color={"white"}
+            _hover={{ backgroundColor: "secondary.500" }}
           >
             Book a schedule
           </MotionButton>
           <MotionButton
-            size={{ sm: "md", md: "lg" }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={toggleColorMode}
-            bgColor={colorMode === "light" ? "white" : "black"}
+            bgColor={"transparent"}
             _hover={{ backgroundColor: "transparent" }}
             _active={{ backgroundColor: "transparent" }}
           >

@@ -12,7 +12,11 @@ import React from "react";
 import Image from "next/image";
 
 export const Header = () => {
-  const responsiveMode = useBreakpointValue({ base: "mobile", md: "web" });
+  const responsiveMode = useBreakpointValue({
+    base: "mobile",
+    sm: "tablet",
+    md: "web",
+  });
   const { colorMode } = useColorMode();
   const MotionText = motion(Text);
   const MotionButton = motion(Button);
@@ -26,21 +30,21 @@ export const Header = () => {
   return (
     <Box p={4}>
       {responsiveMode === "web" ? (
-        <Box alignItems={"center"} justifyItems={"center"} mt={"80px"}>
+        <Box alignItems={"center"} justifyItems={"center"} mt={"100px"}>
           <Flex
             mt={"30px"}
             align={"center"}
             justify={"center"}
             px={"20px"}
             py={"20px"}
-            gap={30}
+            gap={"30px"}
           >
             <Box maxW={{ base: "100%", md: "50%" }}>
               <MotionHeading
-                fontSize={"6xl"}
+                fontSize={"60px"}
                 initial={{ x: -100 }}
                 animate={{ x: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, repeat: 0 }}
               >
                 Offer The Best{" "}
                 <Text as="span" color="primary.500">
@@ -49,7 +53,7 @@ export const Header = () => {
                 With Our Primchat Software
               </MotionHeading>
               <MotionText
-                fontSize={"2xl"}
+                fontSize={"22px"}
                 mt={"20px"}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -59,10 +63,9 @@ export const Header = () => {
                 All-In-One Primarily Software.
               </MotionText>
               <MotionButton
-                fontSize={{ base: "md", sm: "lg", md: "3xl" }}
                 size={{ sm: "sm", md: "lg" }}
                 height={{ sm: "40px", md: "56px" }}
-                mt={10}
+                mt={"30px"}
                 variants={buttonVariants}
                 whileHover="hover"
                 whileTap="tap"
@@ -73,16 +76,16 @@ export const Header = () => {
             </Box>
             <MotionBox
               initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
+              animate={{ scale: 1, repeat: 0 }}
               transition={{ duration: 0.5 }}
             >
               <MotionImage
                 alt="hero-image"
-                width={1000}
-                height={1000}
+                width={700}
+                height={700}
                 src={
                   colorMode === "light"
-                    ? "/assets/banner/bvg-shadow.png"
+                    ? "/assets/images/bvg-cart/light-shadow/cart-light-shadow.png"
                     : "/assets/images/bvg-cart/bvg-shadow-cart.png"
                 }
               />
@@ -98,11 +101,11 @@ export const Header = () => {
             direction={"column"}
             px={"20px"}
             py={"20px"}
-            gap={30}
+            gap={"30px"}
           >
-            <Box maxW={{ base: "100%" }}>
+            <Box>
               <MotionHeading
-                fontSize={{ base: "xl", sm: "2xl" }}
+                fontSize={"18px"}
                 initial={{ x: -100 }}
                 animate={{ x: 0 }}
                 transition={{ duration: 1 }}
@@ -114,8 +117,8 @@ export const Header = () => {
                 With Our Primchat Software
               </MotionHeading>
               <MotionText
-                fontSize={{ base: "xl", sm: "2xl" }}
-                mt={"20px"}
+                fontSize={{ base: "16px", sm: "18px" }}
+                mt={"10px"}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -124,9 +127,6 @@ export const Header = () => {
                 All-In-One Primarily Software.
               </MotionText>
               <MotionButton
-                fontSize={{ base: "xl" }}
-                size={{ base: "lg" }}
-                height={{ base: "36px" }}
                 mt={"20px"}
                 variants={buttonVariants}
                 whileHover="hover"
@@ -147,7 +147,7 @@ export const Header = () => {
                 height={500}
                 src={
                   colorMode === "light"
-                    ? "/assets/banner/bvg-shadow.png"
+                    ? "/assets/images/bvg-cart/light-shadow/cart-light-shadow.png"
                     : "/assets/images/bvg-cart/bvg-shadow-cart.png"
                 }
               />

@@ -7,7 +7,7 @@ export const DataComponentOverview = [
   {
     value: "24",
     subValue: "h",
-    description: "Équipe d'assistance experte",
+    description: "Équipe experte",
   },
   {
     value: "98",

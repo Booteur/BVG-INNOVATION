@@ -26,9 +26,12 @@ export const OurValuesComponent = () => {
       {responsive === "web" ? (
         <SimpleGrid columns={2} spacing={5}>
           {OurValuesData?.map((values, index) => (
-            <GridItem boxShadow={"lg"} key={index}>
+            <GridItem
+              boxShadow={"lg"}
+              key={index}
+              width={{ md: "400px", lg: "500px" }}
+            >
               <HStack
-                width={"500px"}
                 rounded={"lg"}
                 bgColor={colorMode === "light" ? "#F9F9F9" : "primary.500"}
                 p={5}
@@ -38,7 +41,7 @@ export const OurValuesComponent = () => {
                 <Flex
                   rounded={"lg"}
                   width={"300px"}
-                  height={"120px"}
+                  height={"100px"}
                   bgColor={
                     colorMode === "light" ? "primary.500" : "secondary.500"
                   }
@@ -48,13 +51,7 @@ export const OurValuesComponent = () => {
                   {values.icon}
                 </Flex>
                 <VStack align={"start"}>
-                  <Text
-                    fontSize={{
-                      md: "20px",
-                      lg: "25px",
-                    }}
-                    fontWeight={"bold"}
-                  >
+                  <Text fontSize={"20px"} fontWeight={"bold"}>
                     {values.title}
                   </Text>
                   <Text lineHeight={"30px"}>{values.description}</Text>

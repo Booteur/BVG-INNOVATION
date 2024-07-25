@@ -20,14 +20,14 @@ const ServiceCard = ({ icon, title, description }: IService) => {
       whileHover={{ scale: 1.05 }}
       p={4}
     >
-      <HStack spacing={{ base: 4, sm: 5, md: 6 }}>
+      <HStack spacing={4}>
         <Flex width={"50%"}>
           <Image alt={"service-icon"} src={icon} width={200} height={200} />
         </Flex>
         <Flex>
           <Text
             fontWeight={"bold"}
-            fontSize={{ base: "xl", md: "2xl" }}
+            fontSize={{ base: "18px", md: "22px" }}
             textAlign={"start"}
             color={"black"}
           >
@@ -35,10 +35,10 @@ const ServiceCard = ({ icon, title, description }: IService) => {
           </Text>
         </Flex>
       </HStack>
-      <Box mt={"10px"}>
+      <Box mt={"20px"}>
         <Text
           color={"gray.700"}
-          fontSize={{ base: "md", md: "xl" }}
+          fontSize={{ base: "16px", md: "18px" }}
           textAlign={"center"}
         >
           {description}

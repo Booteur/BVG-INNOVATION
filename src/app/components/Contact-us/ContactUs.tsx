@@ -35,7 +35,7 @@ const ContactUs = () => {
           backgroundRepeat="no-repeat"
           backgroundPosition="right"
           backgroundSize="contain"
-          h="150vh"
+          h="100vh"
         >
           <ContactUsWebDisplay />
         </Flex>
@@ -47,6 +47,7 @@ const ContactUs = () => {
           backgroundRepeat="no-repeat"
           backgroundPosition="right"
           backgroundSize="contain"
+          h={"auto"}
         >
           <ContactUsMobileDisplay />
         </Flex>
@@ -67,25 +68,25 @@ export const ContactCard = ({
   const { colorMode } = useColorMode();
   return (
     <Center>
-      <HStack>
+      <HStack width={{ md: "380px", lg: "420px" }}>
         <Flex
           align={"center"}
           justify={"space-between"}
           bgColor={"white"}
-          borderRadius={"30px"}
-          borderWidth={2}
-          borderColor={"#E8E8E8"}
-          width={{ md: "40vw", lg: "30vw", "2xl": "20vw" }}
-          gap={10}
+          borderRadius={"20px"}
+          borderWidth={1}
           p={4}
+          borderColor={"#E8E8E8"}
+          gap={10}
+          width={"100%"}
           boxShadow={"lg"}
         >
           <Flex align={"center"} justify={"center"} gap={2}>
             <Flex
-              width={"73px"}
-              height={"73px"}
+              width={"55px"}
+              height={"55px"}
               bgColor={colorMode === "light" ? "primary.500" : "secondary.500"}
-              borderRadius={"20px"}
+              borderRadius={"12px"}
               alignItems={"center"}
               justifyContent={"center"}
             >
@@ -93,7 +94,7 @@ export const ContactCard = ({
             </Flex>
             <Text color={"black"}>{title}</Text>
           </Flex>
-          <Text fontSize={"22px"} color={"gray.500"}>
+          <Text fontSize={"16px"} color={"gray.500"}>
             {info}
           </Text>
         </Flex>

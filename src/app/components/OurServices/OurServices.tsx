@@ -52,7 +52,7 @@ const ServicesSection = () => {
             <Box mb={"10px"}>
               <MotionText
                 fontWeight={"bold"}
-                fontSize={{ base: "md", sm: "2xl", lg: "3xl", md: "4xl" }}
+                fontSize={{ base: "18px", md: "28px" }}
                 textAlign={"center"}
                 variants={boxVariants}
                 initial="hidden"
@@ -60,23 +60,6 @@ const ServicesSection = () => {
               >
                 Des services mis à votre disposition pour booster votre
                 productivité
-              </MotionText>
-            </Box>
-            <Box
-              width={{ base: "100%", sm: "200", lg: "280", md: "320px" }}
-              alignContent={"center"}
-              justifyContent={"center"}
-            >
-              <MotionText
-                fontWeight={"bold"}
-                fontSize={{ base: "md", sm: "xl", lg: "2xl", md: "3xl" }}
-                textAlign={"center"}
-                variants={boxVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                Découvrez comment nous pouvons vous aider à redéfinir votre
-                l’efficacité
               </MotionText>
             </Box>
           </Flex>

@@ -22,7 +22,7 @@ export const OurValues = () => {
             justifyContent={"center"}
             borderRadius={"20px"}
           >
-            <Text fontSize={"xl"}>Nos valeurs</Text>
+            <Text fontSize={"20px"}>Nos valeurs</Text>
           </Flex>
           <Flex
             mt={"20px"}
@@ -33,7 +33,7 @@ export const OurValues = () => {
             <Box width={{ base: "250px", sm: "250px", md: "450px" }}>
               <Text
                 fontWeight={"bold"}
-                fontSize={{ base: "18px", sm: "18px", md: "30px", lg: "30px" }}
+                fontSize={{ base: "18px", md: "30px" }}
                 textAlign={"center"}
               >
                 Lhistoire et les valeurs derrière BVG-INNOVATIONS

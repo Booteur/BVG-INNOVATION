@@ -51,12 +51,14 @@ export const NavBar = () => {
       zIndex="10000"
       transition="background-color 0.3s"
       bg={isScrolled ? "primary.500" : "none"}
+      alignItems={"center"}
+      justifyContent={"center"}
     >
       <Flex align={"center"} justifyContent={"space-between"} p={4}>
         <Flex align={"center"} gap={2}>
           <MotionBox
-            width={{ base: "50px", sm: "35px" }}
-            height={{ base: "50px", sm: "35px" }}
+            width={"30px"}
+            height={"30px"}
             borderRadius="9px"
             bgColor="#F5F5F5"
             initial={{ opacity: 0 }}
@@ -65,8 +67,8 @@ export const NavBar = () => {
           >
             <MotionImage
               alt="hero-image"
-              width={50}
-              height={50}
+              width={30}
+              height={30}
               src="/assets/logo/losange-icon.png"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -74,12 +76,12 @@ export const NavBar = () => {
             />
           </MotionBox>
           <MotionText
-            fontSize={{ base: "2xl", sm: "4xl" }}
+            fontSize={"20px"}
             fontWeight="bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
-            color={isScrolled ? "white" : "none"}
+            color={colorMode === "light" && !isScrolled ? "black" : "white"}
           >
             BVG - INNOVATION
           </MotionText>
@@ -96,7 +98,6 @@ export const NavBar = () => {
         <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
           <DrawerOverlay>
             <DrawerContent bgColor={"white"} flex={1}>
-              <DrawerCloseButton />
               <DrawerBody
                 display={"flex"}
                 alignItems={"flex-start"}
@@ -130,7 +131,12 @@ export const NavBar = () => {
                     >
                       Contact-us
                     </Button>
-                    <Button width={"50%"} color={"white"} onClick={onClose}>
+                    <Button
+                      bgColor={"secondary.500"}
+                      width={"50%"}
+                      color={"white"}
+                      onClick={onClose}
+                    >
                       Book a schedule
                     </Button>
                   </Flex>

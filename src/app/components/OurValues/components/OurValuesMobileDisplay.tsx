@@ -21,7 +21,7 @@ export const OurValuesMobileDisplay = () => {
             bgColor={colorMode === "light" ? "#F9F9F9" : "primary.500"}
             p={5}
             spacing={5}
-            width={{ base: "300px", sm: "330px" }}
+            width={{ base: "350px", sm: "300px" }}
             align={"start"}
             boxShadow={"lg"}
           >
@@ -38,7 +38,7 @@ export const OurValuesMobileDisplay = () => {
               >
                 {values.icon}
               </Flex>
-              <Text fontWeight={"bold"} fontSize={{ base: "2xl", sm: "3xl" }}>
+              <Text fontWeight={"bold"} fontSize={{ base: "18px", sm: "22px" }}>
                 {values.title}
               </Text>
             </Flex>

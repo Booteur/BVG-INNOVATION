@@ -4,38 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dd0c1c1-8293-43b7-bb89-f3ff3edec580" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/utils/languages/fr.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/utils/languages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Booteur.github.io.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+    <list default="true" id="5dd0c1c1-8293-43b7-bb89-f3ff3edec580" name="Changes" comment="fix: 🐛 [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing">
+      <change afterPath="$PROJECT_DIR$/src/app/api/send-email/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Contact-us/types/contact-values.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Contact-us/validation/contact-validation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/components/Input/TextInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/BVGHistory/BVGHistory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/BVGHistory/BVGHistory.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/ContactUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/ContactUs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsWebDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsWebDisplay.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/HeroHeader/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/HeroHeader/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/HeroHeader/components/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/HeroHeader/components/NavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/HeroHeader/components/WebNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/HeroHeader/components/WebNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/HeroHeader/dummyLinks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/HeroHeader/dummyLinks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/HowItWork/HowItWork.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/HowItWork/HowItWork.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OurMission/OurMission.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OurMission/OurMission.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OurServices/OurServices.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OurServices/OurServices.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OurServices/ServiceData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OurServices/ServiceData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OurValues/OurValues.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OurValues/OurValues.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OurValues/OurValuesComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OurValues/OurValuesComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/OurValues/components/OurValuesMobileDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/OurValues/components/OurValuesMobileDisplay.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/PlatformOverview/PlatformOverview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/PlatformOverview/PlatformOverview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/PlatformOverview/components/FirstCardItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/PlatformOverview/components/FirstCardItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/PlatformOverview/components/SecondCardItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/PlatformOverview/components/SecondCardItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Statistique/Statistique.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Statistique/Statistique.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Statistique/components/StatsDataMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Statistique/components/StatsDataMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Statistique/components/StatsDataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Statistique/components/StatsDataTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/TeamWork/TeamWork.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/TeamWork/TeamWork.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "victory-aime"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Booteur/BVG-INNOVATION.git",
+    "accountId": "6d2fee23-0bc9-480e-b89b-b84a5cd83889"
+  }
+}]]></component>
   <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
   <component name="KubernetesApiProvider"><![CDATA[{
   "isMigrated": true
@@ -83,6 +74,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/api/send-email" />
       <recent name="$PROJECT_DIR$/src/app/utils/languages" />
     </key>
   </component>
@@ -103,12 +95,25 @@
       <option name="presentableId" value="Default" />
       <updated>1721840912471</updated>
       <workItem from="1721840914634" duration="2903000" />
-      <workItem from="1721843859692" duration="22431000" />
+      <workItem from="1721843859692" duration="49634000" />
     </task>
+    <task id="LOCAL-00001" summary="fix: 🐛 [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing">
+      <option name="closed" value="true" />
+      <created>1721924603782</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721924603782</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix:  [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix:  [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

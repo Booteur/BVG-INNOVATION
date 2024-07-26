@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const { userInfo, email, title, message } = await req.json();
+  const { userInfo, email, objectMessage, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
     host: "mail.privateemail.com",
@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     from: "contact@bvg-innovation.tech", // Must be the authenticated user
     replyTo: email, // Reply-to address can be different
     to: "contact@bvg-innovation.tech", // Replace with your receiving email address
-    subject: `${title} - ${userInfo}`,
+    subject: `${objectMessage} - ${userInfo}`,
     text: message,
   };
 

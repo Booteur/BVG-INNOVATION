@@ -26,40 +26,47 @@ import { contactValidationSchema } from " _/app/components/Contact-us/validation
 
 export const ContactUsMobileDisplay = () => {
   const toast = useToast();
-  const validationSchema = Yup.object({
-    userInfo: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email address").required("Required"),
-    title: Yup.string().required("Required"),
-    message: Yup.string().required("Required"),
-  });
 
   const handleSubmit = async (values: any, actions: any) => {
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-
-    const result = await res.json();
-    if (result.success) {
-      toast({
-        title: "Message sent successfully.",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
+    console.log("Submitting form with values:", values);
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
       });
-      actions.resetForm();
-    } else {
+
+      const result = await res.json();
+      if (result.success) {
+        toast({
+          title: "Message sent successfully.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+        actions.resetForm();
+      } else {
+        toast({
+          title: "Failed to send message.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
       toast({
-        title: "Failed to send message.",
+        title: "An error occurred.",
+        description: error.message,
         status: "error",
         duration: 5000,
         isClosable: true,
       });
+    } finally {
+      actions.setSubmitting(false);
     }
-    actions.setSubmitting(false);
   };
 
   return (
@@ -91,8 +98,10 @@ export const ContactUsMobileDisplay = () => {
           validationSchema={contactValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting, setFieldValue }) => (
+          {({ isSubmitting, setFieldValue, errors, values }) => (
             <Form>
+              <Text>{JSON.stringify(values)}</Text>
+              <Text>{JSON.stringify(errors)}</Text>
               <VStack spacing={6}>
                 <TextInput
                   name="userInfo"
@@ -117,7 +126,7 @@ export const ContactUsMobileDisplay = () => {
                 <TextInput
                   name="objectMessage"
                   label="Object"
-                  placeholder="Enter the title"
+                  placeholder="Enter the Subject"
                   required
                   maxLength={100}
                   onChangefunc={(e: { target: { value: any } }) =>

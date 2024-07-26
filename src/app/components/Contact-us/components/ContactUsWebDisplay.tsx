@@ -4,17 +4,50 @@ import {
   HStack,
   Center,
   VStack,
-  FormControl,
-  FormLabel,
-  Textarea,
   Button,
-  Input,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import { Formik, Form } from "formik";
 import { MailIcon, TelIcon } from "../../../../../public/assets/svg";
 import { ContactCard } from "../ContactUs";
+import { contactValues } from " _/app/components/Contact-us/types/contact-values";
+import { contactValidationSchema } from " _/app/components/Contact-us/validation/contact-validation";
+import { TextInput } from " _/app/components/Input/TextInput";
 
 export const ContactUsWebDisplay = () => {
+  const toast = useToast();
+  const handleSubmit = async (values: any, actions: any) => {
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      toast({
+        title: "Message sent successfully.",
+        description: " request send successfully",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+      actions.resetForm();
+    } else {
+      toast({
+        title: "Failed to send message.",
+        description: "sorry try later",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+    actions.setSubmitting(false);
+  };
+
   return (
     <Flex flexDirection="column" alignItems="center">
       <HStack spacing={20} align={"center"} justify={"center"}>
@@ -38,32 +71,74 @@ export const ContactUsWebDisplay = () => {
           boxShadow={"lg"}
           width={{ md: "80vw", lg: "80vw", "2xl": "55vw" }}
         >
-          <VStack align={"start"} justify={"center"} spacing={10} p={"50px"}>
-            <HStack spacing={5} width={"100%"}>
-              <FormControl id="message" isRequired>
-                <FormLabel color={"black"}>Email address</FormLabel>
-                <Input borderColor={"gray.300"} type="email" height={"47px"} />
-              </FormControl>
-              <FormControl id="message" isRequired>
-                <FormLabel color={"black"}>Email address</FormLabel>
-                <Input borderColor={"gray.300"} type="email" height={"47px"} />
-              </FormControl>
-            </HStack>
-            <FormControl id="message" isRequired width={"100%"}>
-              <FormLabel color={"black"}>Object</FormLabel>
-              <Input borderColor={"gray.300"} type="email" height={"47px"} />
-            </FormControl>
-            <FormControl id="message" isRequired width={"100%"}>
-              <FormLabel color={"black"}>Message</FormLabel>
-              <Textarea borderColor={"gray.300"} size={"lg"} height={"200px"} />
-            </FormControl>
-          </VStack>
-
-          <Center pb={10}>
-            <Button size="lg" w="206px" borderRadius={"79px"} color={"white"}>
-              Envoyer le message
-            </Button>
-          </Center>
+          <Formik
+            enableReinitialize
+            initialValues={contactValues}
+            validationSchema={contactValidationSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ isSubmitting, setFieldValue }) => (
+              <Form>
+                <VStack justify={"center"} spacing={10} p={"50px"}>
+                  <HStack spacing={5} width={"100%"}>
+                    <TextInput
+                      name="userInfo"
+                      label="Nom & Prenom"
+                      placeholder="Enter your name"
+                      required
+                      onChangefunc={(e: { target: { value: any } }) =>
+                        setFieldValue("userInfo", e.target.value)
+                      }
+                    />
+                    <TextInput
+                      name="email"
+                      label="Votre Email"
+                      type="email"
+                      placeholder="Enter your email"
+                      required
+                      onChangefunc={(e: { target: { value: any } }) =>
+                        setFieldValue("email", e.target.value)
+                      }
+                    />
+                  </HStack>
+                  <TextInput
+                    name="objectMessage"
+                    label="Object"
+                    placeholder="Enter the title"
+                    required
+                    maxLength={100}
+                    onChangefunc={(e: { target: { value: any } }) =>
+                      setFieldValue("objectMessage", e.target.value)
+                    }
+                  />
+                  <TextInput
+                    name="message"
+                    label="Message"
+                    as="textarea"
+                    placeholder="Enter your message"
+                    height={"150px"}
+                    required
+                    maxLength={500}
+                    onChangefunc={(e: { target: { value: string } }) =>
+                      setFieldValue("message", e.target.value)
+                    }
+                  />
+                  <Center>
+                    <Button
+                      size="lg"
+                      w="206px"
+                      borderRadius={"12px"}
+                      color={"white"}
+                      type="submit"
+                      isLoading={isSubmitting}
+                    >
+                      Envoyer le message
+                    </Button>
+                  </Center>
+                </VStack>
+              </Form>
+            )}
+          </Formik>
         </Box>
       </Center>
     </Flex>

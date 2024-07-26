@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dd0c1c1-8293-43b7-bb89-f3ff3edec580" name="Changes" comment="fix: 🐛 [send-email] correct regression and add env for dynamic fetch">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/send-email/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/send-email/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsWebDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsWebDisplay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +93,7 @@
       <workItem from="1721840914634" duration="2903000" />
       <workItem from="1721843859692" duration="49979000" />
       <workItem from="1721992844859" duration="2826000" />
-      <workItem from="1721995686320" duration="67000" />
+      <workItem from="1721995686320" duration="2666000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 🐛 [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing">
       <option name="closed" value="true" />
@@ -125,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721994901362</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: 🐛 [send-email] correct regression and add env for dynamic fetch">
+      <option name="closed" value="true" />
+      <created>1721996023349</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721996023350</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +150,7 @@
     <MESSAGE value="fix:  [send-email] correct regression for mobile" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" />
     <MESSAGE value="fix:  [send-email] correct regression for mobile" />
+    <MESSAGE value="fix:  [send-email] correct regression and add env for dynamic fetch" />
     <MESSAGE value="fix:  [send-email] correct regression and add env for dynamic fetch" />
     <option name="LAST_COMMIT_MESSAGE" value="fix:  [send-email] correct regression and add env for dynamic fetch" />
   </component>

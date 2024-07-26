@@ -14,38 +14,50 @@ import { ContactCard } from "../ContactUs";
 import { contactValues } from " _/app/components/Contact-us/types/contact-values";
 import { contactValidationSchema } from " _/app/components/Contact-us/validation/contact-validation";
 import { TextInput } from " _/app/components/Input/TextInput";
+import axios from "axios";
 
 export const ContactUsWebDisplay = () => {
   const toast = useToast();
-  const handleSubmit = async (values: any, actions: any) => {
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
 
-    const result = await res.json();
-    if (result.success) {
-      toast({
-        title: "Message sent successfully.",
-        description: " request send successfully",
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
-      actions.resetForm();
-    } else {
+  const handleSubmit = async (values: any, actions: any) => {
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/send-email`,
+        values,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        },
+      );
+
+      if (res.data.success) {
+        toast({
+          title: "Message sent successfully.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+        actions.resetForm();
+      } else {
+        toast({
+          title: "Failed to send message.",
+          status: "error",
+          duration: 5000,
+          isClosable: true,
+        });
+      }
+    } catch (error) {
       toast({
         title: "Failed to send message.",
-        description: "sorry try later",
         status: "error",
         duration: 5000,
         isClosable: true,
       });
+      console.error("Error sending email:", error);
+    } finally {
+      actions.setSubmitting(false);
     }
-    actions.setSubmitting(false);
   };
 
   return (

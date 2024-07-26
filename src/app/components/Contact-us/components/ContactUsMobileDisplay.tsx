@@ -22,46 +22,35 @@ export const ContactUsMobileDisplay = () => {
   const toast = useToast();
 
   const handleSubmit = async (values: any, actions: any) => {
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PRIVATE_API_URL}/api/send-email`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(values),
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/send-email`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(values),
+      },
+    );
 
-      const result = await res.json();
-      if (result.success) {
-        toast({
-          title: "Message sent successfully.",
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-        });
-        actions.resetForm();
-      } else {
-        toast({
-          title: "Failed to send message.",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+    const result = await res.json();
+    if (result.success) {
       toast({
-        title: "An error occurred.",
+        title: "Message sent successfully.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+      actions.resetForm();
+    } else {
+      toast({
+        title: "Failed to send message.",
         status: "error",
         duration: 5000,
         isClosable: true,
       });
-    } finally {
-      actions.setSubmitting(false);
     }
+    actions.setSubmitting(false);
   };
 
   return (

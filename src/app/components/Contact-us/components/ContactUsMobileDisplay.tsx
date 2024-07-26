@@ -28,15 +28,17 @@ export const ContactUsMobileDisplay = () => {
   const toast = useToast();
 
   const handleSubmit = async (values: any, actions: any) => {
-    console.log("Submitting form with values:", values);
     try {
-      const res = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
         },
-        body: JSON.stringify(values),
-      });
+      );
 
       const result = await res.json();
       if (result.success) {
@@ -59,7 +61,6 @@ export const ContactUsMobileDisplay = () => {
       console.error("Error submitting form:", error);
       toast({
         title: "An error occurred.",
-
         status: "error",
         duration: 5000,
         isClosable: true,

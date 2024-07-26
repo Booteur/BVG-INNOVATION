@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dd0c1c1-8293-43b7-bb89-f3ff3edec580" name="Changes" comment="fix: 🐛 [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing">
+    <list default="true" id="5dd0c1c1-8293-43b7-bb89-f3ff3edec580" name="Changes" comment="fix: 🐛 [send-email] correct regression for mobile">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/api/send-email/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/send-email/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" afterDir="false" />
     </list>
@@ -59,7 +61,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "prettierjs.PrettierConfiguration.Package": "/Users/macbookpro/Documents/bvg-web/node_modules/prettier",
-    "settings.editor.selected.configurable": "actions.on.save",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/macbookpro/Documents/bvg-web/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -88,6 +90,7 @@
       <updated>1721840912471</updated>
       <workItem from="1721840914634" duration="2903000" />
       <workItem from="1721843859692" duration="49979000" />
+      <workItem from="1721992844859" duration="1479000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 🐛 [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing">
       <option name="closed" value="true" />
@@ -97,15 +100,28 @@
       <option name="project" value="LOCAL" />
       <updated>1721924603782</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix: 🐛 [send-email] correct regression for mobile">
+      <option name="closed" value="true" />
+      <created>1721991800310</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721991800310</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix:  [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix:  [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing" />
+    <MESSAGE value="fix:  [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing" />
+    <MESSAGE value="fix:  [send-email] correct regression for mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix:  [send-email] correct regression for mobile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

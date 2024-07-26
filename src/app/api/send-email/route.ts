@@ -5,19 +5,19 @@ export async function POST(req: Request) {
   const { userInfo, email, objectMessage, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
-    host: "mail.privateemail.com",
+    host: process.env.SMTP_HOST,
     port: 465,
-    secure: true, // True for 465, false for other ports
+    secure: true,
     auth: {
-      user: "contact@bvg-innovation.tech", // Your authenticated email
-      pass: "Contact2024@", // Your email password
+      user: process.env.USER_EMAIL,
+      pass: process.env.USER_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: "contact@bvg-innovation.tech", // Must be the authenticated user
-    replyTo: email, // Reply-to address can be different
-    to: "contact@bvg-innovation.tech", // Replace with your receiving email address
+    from: process.env.USER_EMAIL,
+    replyTo: email,
+    to: process.env.USER_EMAIL,
     subject: `${objectMessage} - ${userInfo}`,
     text: message,
   };

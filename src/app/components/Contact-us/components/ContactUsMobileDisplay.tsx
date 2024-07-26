@@ -4,22 +4,16 @@ import {
   HStack,
   Center,
   VStack,
-  FormControl,
-  FormLabel,
-  Textarea,
   Button,
-  Input,
   Text,
   SimpleGrid,
-  GridItem,
   useColorMode,
   Stack,
   useToast,
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import { MailIcon, TelIcon } from "../../../../../public/assets/svg";
-import * as Yup from "yup";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { Form, Formik } from "formik";
 import { TextInput } from " _/app/components/Input/TextInput";
 import { contactValues } from " _/app/components/Contact-us/types/contact-values";
 import { contactValidationSchema } from " _/app/components/Contact-us/validation/contact-validation";
@@ -30,7 +24,7 @@ export const ContactUsMobileDisplay = () => {
   const handleSubmit = async (values: any, actions: any) => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/send-email`,
+        `${process.env.NEXT_PRIVATE_API_URL}/api/send-email`,
         {
           method: "POST",
           headers: {
@@ -101,8 +95,6 @@ export const ContactUsMobileDisplay = () => {
         >
           {({ isSubmitting, setFieldValue, errors, values }) => (
             <Form>
-              <Text>{JSON.stringify(values)}</Text>
-              <Text>{JSON.stringify(errors)}</Text>
               <VStack spacing={6}>
                 <TextInput
                   name="userInfo"

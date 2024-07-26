@@ -29,6 +29,7 @@ export interface TextInputProps extends HTMLChakraProps<"input"> {
   isLoading?: boolean;
 }
 
+// eslint-disable-next-line react/display-name
 export const TextInput: FC<TextInputProps> = memo(
   ({
     name = "",

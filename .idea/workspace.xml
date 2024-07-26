@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dd0c1c1-8293-43b7-bb89-f3ff3edec580" name="Changes" comment="fix: 🐛 [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing">
-      <change afterPath="$PROJECT_DIR$/src/app/api/send-email/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Contact-us/types/contact-values.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Contact-us/validation/contact-validation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/Input/TextInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsMobileDisplay.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsWebDisplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Contact-us/components/ContactUsWebDisplay.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/components/Input/TextInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/Input/TextInput.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721840912471</updated>
       <workItem from="1721840914634" duration="2903000" />
-      <workItem from="1721843859692" duration="49634000" />
+      <workItem from="1721843859692" duration="49979000" />
     </task>
     <task id="LOCAL-00001" summary="fix: 🐛 [ui-ux] correct all default spacing&#10;&#10;major fix for zomm in  and correct spacing">
       <option name="closed" value="true" />
